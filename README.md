@@ -27,9 +27,8 @@ The course is organized in 12 sessions grouped together in 4 blocks. Each block 
 
 1. **Basics of agent-based modeling: The macro-micro gap and cellular automata**  (03.03.2022)  
 1.1. Course administration and information  
-1.2. Readings: ([Smith & Conrey, 2007](https://journals.sagepub.com/doi/abs/10.1177/1088868306294789)) (Macy & Willer, 2002?) (Hedström & Ylikoski, 2010?)
-1.3. Game of life paper: ([Gardner, 1970](http://web.stanford.edu/class/sts145/Library/life.pdf))
-- (Practice session 1 start: ABM basics in Python with Mesa)
+1.2. [Readings]()
+(Practice session 1 start: ABM basics in Python with Mesa)
 *(Please install Jupyter and iPython before the next session takes place)*
 
 2. **Modeling segregation: Schelling’s model**  (10.03.2022)  
