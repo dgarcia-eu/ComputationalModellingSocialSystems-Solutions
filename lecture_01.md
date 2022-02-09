@@ -20,10 +20,10 @@ The Python crash course is aimed at teaching programming basics in Python as wel
 
 The content of the tutorials is as follows:
 
-* [Übung 00](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/00_uebung): Introduction to working with Jupyter Notebooks
-* [Übung 01](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/01_uebung): Using Python as calculator
-* [Übung 02](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/02_uebung): Lists, loops and tables
-* [Übung 03](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/03_uebung): Logic, conditionals and filters
-* [Übung 04](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/04_uebung): Functions, images and text
+* [Übung 00](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/00_uebung): Introduction to working with Jupyter Notebooks
+* [Übung 01](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/01_uebung): Using Python as calculator
+* [Übung 02](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/02_uebung): Lists, loops and tables
+* [Übung 03](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/03_uebung): Logic, conditionals and filters
+* [Übung 04](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/04_uebung): Functions, images and text
 
-The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/Daten-Lesen-Lernen/daten-lesen-lernen-lecture/tree/master/data).
+The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/data).
