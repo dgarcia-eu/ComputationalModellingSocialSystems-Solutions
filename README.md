@@ -29,7 +29,7 @@ The course is organized in 14 sessions grouped together in 4 blocks. Each block 
 
 - Course administration and information  
 - [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md)
-- (Practice session 1 start: ABM basics in Python with Mesa)
+- (Practice session 1 start: ABM basics in Python with Mesa) [Code](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
 
 *(Please install Jupyter and iPython before the next session takes place)*
 
