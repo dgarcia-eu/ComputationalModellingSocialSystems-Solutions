@@ -27,3 +27,25 @@ The content of the tutorials is as follows:
 * [Übung 04](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/04_uebung): Functions, images and text
 
 The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/data).
+
+### Mesa crash course
+
+This tutorial has been adapted from the Mesa package introductory tutorial [GitHub](https://github.com/projectmesa/mesa/blob/main/docs/tutorials/intro_tutorial.rst). It has been purposefully simplified for the context of this course.
+
+In this tutorial, we will walk through creating a simple model and progressively add functionality which will illustrate Mesa’s core features.
+
+The content of the tutorials is as follows:
+
+* [Mesa setup](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/mesa_introduction/mesa_setup_tutorial.ipynb): Introduction to setup Mesa package
+* [Mesa model tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/mesa_introduction/mesa_introductory_tutorial_complete.ipynb): Using Mesa simple model creation
+
+### Pandas crash course
+
+In this tutorial, we will walk through functionality of Pandas library, neccesary for data transformation and visualization.
+
+The content of the tutorials is as follows:
+
+* [Pandas basic methods](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/pandas_introduction/pandas_introductory_tutorial_methods.ipynb): Introduction to working with Pandas
+* [Pandas data transformation tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/pandas_introduction/pandas_introductory_tutorial_data.ipynb): Using Pandas Series object for data transformation
+
+The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/python_introduction/data).
