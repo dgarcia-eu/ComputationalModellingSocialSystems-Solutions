@@ -30,6 +30,8 @@ The data sets needed to complete the tutorials can be found in the folder [data]
 
 ### Mesa crash course
 
+- ([Masad & Kazil, 2015](https://www.researchgate.net/profile/Jacqueline-Kazil/publication/328774079_Mesa_An_Agent-Based_Modeling_Framework/links/5cc7632192851c8d220e5897/Mesa-An-Agent-Based-Modeling-Framework.pdf))**Note that the code in the research paper might be depricated, so use the tutorial code for reference**
+
 This tutorial has been adapted from the Mesa package introductory tutorial [GitHub](https://github.com/projectmesa/mesa/blob/main/docs/tutorials/intro_tutorial.rst). It has been purposefully simplified for the context of this course.
 
 In this tutorial, we will walk through creating a simple model and progressively add functionality which will illustrate Mesa’s core features.
