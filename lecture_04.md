@@ -16,4 +16,5 @@ N/A
 
 The content of the tutorials is as follows:
 
-* [Mesa Schelling example](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/04_lecture/mesa-schelling-example): A simple example implementation of Schelling's model in Mesa
+* [Mesa Schelling example](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/04_lecture/mesa-schelling-example.ipynb): A simple example implementation of Schelling's model in Mesa
+* [Full Mesa code](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/04_lecture/mesa-schelling-example): Full code from Python Mesa [GitHub](https://github.com/projectmesa/mesa/tree/main/examples/schelling).
