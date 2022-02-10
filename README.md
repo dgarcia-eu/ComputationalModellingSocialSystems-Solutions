@@ -28,27 +28,27 @@ The course is organized in 14 sessions grouped together in 4 blocks. Each block 
 1. **Basics of agent-based modeling: The macro-micro gap and cellular automata**  (03.03.2022)
 
 - Course administration and information  
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md)
-- (Practice session 1 start: ABM basics in Python with Mesa) [Code](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
+- [[Readings]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md)
+- (Practice session 1 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
 
 *(Please install Jupyter and iPython before the next session takes place)*
 
 2. **Modeling segregation: Schelling’s model**  (10.03.2022)  
 
 - [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_02.md)
-- (Practice session 2 start: ABM basics in Python with Mesa)
+- (Practice session 2 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
 
 3. **Modelling culture: Axelrod’s model and Latane’s model**  (17.03.2022)  
 
 - [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_03.md)
-- (Practice session 3 start: ABM basics in Python with Mesa)
+- (Practice session 3 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
 
 ### Block 2: Opinion dynamics
 
 4. **Basics of spreading: Granovetter’s threshold model**  (24.03.2022)
 
 - [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_04.md)
-- (Exercise 1 start (ungraded): Finding segregation tolerance thresholds in Schelling)
+- (Exercise 1 start (ungraded): Finding segregation tolerance thresholds in Schelling) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_04.md#code)
 
 5. **Modelling consensus, polarization, and fragmentation: The voter model and Bounded confidence models, Information accumulation systems**  (31.03.2022)
 
