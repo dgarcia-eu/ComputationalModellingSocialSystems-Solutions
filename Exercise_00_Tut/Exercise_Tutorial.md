@@ -30,9 +30,9 @@ In this tutorial, we will walk through functionality of Pandas library, neccesar
 
 The content of the tutorials is as follows: [[Download material]](https://downgit.github.io/#/home?url=https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/tree/main/Exercise_00_Tut/pandas_introduction)
 
-2.1. [Pandas data transformation tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/pandas_introduction/pandas_introductory_tutorial_data.ipynb): Using Pandas Series object for data transformation
+2.1. [Pandas data transformation tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_00_Tut/pandas_introduction/pandas_introductory_tutorial_data.ipynb): Using Pandas Series object for data transformation
 
-The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/tree/master/01_basics/pandas_introduction/data).
+The data sets needed to complete the tutorials can be found in the folder [data](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/tree/main/Exercise_00_Tut/pandas_introduction/data).
 
 
 ## 3. Mesa crash course
@@ -41,9 +41,9 @@ In this tutorial, we will walk through creating a simple model and progressively
 
 The content of the tutorials is as follows: [[Download material]](https://downgit.github.io/#/home?url=https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/tree/main/Exercise_00_Tut/mesa_introduction)
 
-3.1. [Mesa setup](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/mesa_introduction/mesa_setup_tutorial.ipynb): Introduction to setup Mesa package
+3.1. [Mesa setup](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_00_Tut/mesa_introduction/mesa_setup_tutorial.ipynb): Introduction to setup Mesa package
 
-3.2. [Mesa model tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/mesa_introduction/mesa_introductory_tutorial_complete.ipynb): Using Mesa simple model creation
+3.2. [Mesa model tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_00_Tut/mesa_introduction/mesa_introductory_tutorial_complete.ipynb): Using Mesa simple model creation
 
 _This tutorial has been adapted from the Mesa package introductory tutorial [GitHub](https://github.com/projectmesa/mesa/blob/main/docs/tutorials/intro_tutorial.rst). It has been purposefully simplified for the context of this course._
 
