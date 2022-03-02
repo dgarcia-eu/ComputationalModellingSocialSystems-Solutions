@@ -4,6 +4,8 @@
 
 In case you have trouble following the given Anaconda installation tutorial or you get errors along the way, please consult the links in the Appendix with additional explanation.
 
+**Notepads with solutions will be available after the Tutorial session, so we invite you to participate and explore the code yourself during the session.**
+
 ## 1. Python crash course
 
 The Python crash course is aimed at teaching programming basics in Python as well as the usage of libraries and handling of different data types. This part of the course is very brief and only introduces concepts that will be strictly necessary in later parts of the course. 
