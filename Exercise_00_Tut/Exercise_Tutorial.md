@@ -28,7 +28,7 @@ The data sets needed to complete the tutorials can be found in the folder [data]
 
 In this tutorial, we will walk through functionality of Pandas library, neccesary for data transformation and data visualization.
 
-The content of the tutorials is as follows: [[Download material](https://downgit.github.io/#/home?url=https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/tree/main/Exercise_00_Tut/pandas_introduction)
+The content of the tutorials is as follows: [[Download material]](https://downgit.github.io/#/home?url=https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/tree/main/Exercise_00_Tut/pandas_introduction)
 
 2.1. [Pandas data transformation tutorial](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/01_basics/pandas_introduction/pandas_introductory_tutorial_data.ipynb): Using Pandas Series object for data transformation
 
