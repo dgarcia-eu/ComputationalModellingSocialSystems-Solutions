@@ -136,9 +136,73 @@ knitr::include_graphics("Figures/random_graph.svg")
 
 - There is not one but an ensamble of networks that satisfy the fixed constraints
 
-- Probability of such networks P(G)
+- Probability of such networks $P(G)$:
   - $P(G)=1|\omega$ , for such networks where **omega** is the number of such networks
   - $P(G)=0$ , for all other networks
+
+---
+
+
+# Excercise 2
+
+- Show an example of a fixed n,m random network vs. ensamble of other networks
+
+# F.A.Q.
+
+- Simple graph - show simple graph image from wiki
+
+---
+
+# Random graph ensamble
+
+- Ensable have *typical* behavior based on **properties (averages)**
+  - Diameter: $\langle l \rangle = \sum_{G} P(G)l(G) = \frac{1}{\omega} \sum_{G} l(G)$
+  - Number of edges: $\langle m \rangle$
+  - Degree: $\langle k \rangle = 2 \frac{m}{n}$
+
+- Special cases on the spectrum of probability distributions are not important
+  - e.g. large/small dimeter $l$
+  - These are not *typical* networks
+  - For large $n$ vertices properties averages tend to concentrate at the ensable averages
+
+- Such **typical networks** can be analysed analitically
+
+---
+
+# Two interesting random graph ensambles
+
+- G(n,m) - given/fixed number of edges $m$
+- G(n,p) - given/fixed probability of edges $p(m)$
+  - The edges $m$ are not fixed
+  - The vertices $n$ are fixed
+
+- Probability of such G(n,p) networks $P(G)$:
+  - $P(G) = p^m(1-p)^(\frac{n}{2})-m$ , for such networks
+  - $P(G)=0$ , for non-simple graphs
+
+- Probability distribution of edges
+  - Erdos - Renyi
+  - Poisson random network graph
+  - Bernoulli random network graph
+
+
+```{r, echo=FALSE, out.width=900, fig.align='center'}
+knitr::include_graphics("Figures/erdos_renyi_graph.svg")
+```
+
+```{r, echo=FALSE, out.width=900, fig.align='center'}
+knitr::include_graphics("Figures/poison_graph.svg")
+```
+
+```{r, echo=FALSE, out.width=900, fig.align='center'}
+knitr::include_graphics("Figures/bernoulli_graph.svg")
+```
+
+---
+
+# Excercise 3
+
+- Give example of different probability distributions of G(n,p) and ask for behavior traits
 
 ---
 
