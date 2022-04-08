@@ -206,6 +206,82 @@ knitr::include_graphics("Figures/bernoulli_graph.svg")
 
 ---
 
+# Analytical behavior analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
+
+- Mean number of edges $\langle m \rangle$ (expected)
+  - What is the number of graphs with exactly (n,m) between **distinct vertex pairs** $\binom{n}{2}$
+    - Every graph has the same (unifrom) probability $P(G)$:
+
+$$P(G) = p^m(1-p)^(\frac{n}{2})-m$$
+
+  - What is the probability of drawing a graph (selecting on random) with exactly $m$ edges from the ensamble G(n,p)?
+
+$$P(m) = \binom{\binom{n}{2}}{m}p^m(1-p)^(\frac{n}{2})-m$$
+
+    - this is a **binomial distribution**, so it gets easy to solve
+
+$$\langle m \rangle = \sum_{m=0}^{\binom{n}{2}}mP(m) = \binom{n}{2} p$$
+
+    - distinct vertex pairs * probability of an edge
+
+- Mean degree of vertex $$\langle k \rangle$$ a.k.a. $c$
+  - Mean degree $$\langle k \rangle = \frac{2m}{n}$$, where $n$ is a fixed constant
+
+$$\langle k \rangle = \sum_{m=0}^{\binom{n}{2}} \frac{2m}{n} P(m) = \frac{2}{n}\binom{n}{2}p = (n-1)p$$
+
+    - number of other vertices * probability of an edge
+    - $\langle k \rangle == c$
+
+---
+
+# Analytical behavior analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
+
+- Degree distribution $p_{k}$ (for a vertex)
+  - What is the probability of a vertex connected to $k$ other vertices (and not with others)?
+    - $p^{k}(1-p)^{n-1-k}$ , with $\binom{n-1}{k}$ distinct vertex pairs
+
+$$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$
+
+    - this is again a **binomial distribution**, so it gets easy to solve
+
+---
+
+# Excercise 4
+
+- Show examples of these behaviors analytics on a network
+
+# F.A.Q.
+
+- Binomial distribution
+
+---
+
+# Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
+
+- Mean degree $c$
+  - constant - number of friends does not depend on the number of people in the world
+  1 . $c = (n-1)p \Rightarrow p = \frac{c}{n-1}$ , $n\rightarrow\infty$
+    - Vanishingly small p
+
+- Degree distribution (for a vertex) $p_k$
+
+$$ln[(1-p)^{n-1-k}] = (n-1-k)ln(1-\frac{c}{n-1}) \simeq -(n-1-k)\frac{c}{n-1} \simeq -c
+
+  - Expand the logarithm as Tayler series
+  - Becmoes more exact as $n\rightarrow\infty$
+  - $(1-p)^{n-1-k} = e^{-c}$
+  - Taking the exponent of both sides, $n\rightarrow\infty$
+
+$$\binom{n-1}{k} = \frac{(n-1)!}{(n-1-k)!k!} \simeq \frac{(n-1)^{k}}{k!}, $n\rightarrow\infty$
+
+$$p_{k} = \binom{n-1}{k}p^k(1-p)^{n-1-k}$$
+
+  - Poissons (degree) distribution for G(n,p) when $n\rightarrow\infty$
+
+$$p_{k} = \frac{(n-1)^k}{k!}p^k e^{-c} = \frac{(n-1)^k}{k!} (\frac{c}{n-1})^k e^{-c} = e^{-c} \frac{c^{k}}{k!}$$ , $n\rightarrow\infty$
+
+---
+
 # Voter models of opinion dynamics
 
 - Rate to change opinion depends on other agents:
