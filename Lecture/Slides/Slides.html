@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Opinion Dynamics</title>
+    <title>Random graphs</title>
     <meta charset="utf-8" />
     <meta name="author" content="David Garcia, Petar Jerčić, Jana Lasser    TU Graz" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="libs/footer.css" type="text/css" />
   </head>
@@ -11,7 +12,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Opinion Dynamics
+# Random graphs
 ### David Garcia, Petar Jerčić, Jana Lasser <br><br> <em>TU Graz</em>
 ### Computational Modelling of Social Systems
 
@@ -48,517 +49,308 @@ layout: true
 
 # Overview
 
-## 1. The voter model
+## 1. Random graphs
 
-## 2. Bounded confidence
+## 2. Poisson
 
-## 3. Modeling polarization in the digital society
-
----
-
-# The voter model
-
-## *1. The voter model*
-
-## 2. Bounded confidence
-
-## 3. Modeling polarization in the digital society
+## 3. Giant component
 
 ---
 
-# Opinion dynamics outcomes
+# Random graphs
 
-- **Consensus**:
-  - Distribution of opinions in which the vast majority of agents agree on the same opinion
+## *1. Random graphs*
 
+## 2. Poisson
 
-- **Chaos:**
-  - Distribution of opinions in a population in which no apparent agreement group or structure can be identified (fully random)
-
-
-- **Polarization:**
-  - Bimodal distribution of opinions in a population towards the extremes of an opinion spectrum
-
-
-- **Fragmentation:**
-  - Multimodal distribution of opinions in a population into groups of high internal agreement and high external disagreement (multipolarization)
+## 3. Giant component
 
 ---
 
-# Opinion dynamics modelling principles
+# Random graphs
 
-- Agent-based modelling approach: 
-  - internal state include (at least) the agent's opinion
-  - interaction rules between agents are specified
-  - these interactions cause emergent system properties
+- **Networks** that posses a particular property
+  - Which are otherwise random (e.g., fixed degree distribution)
 
+- **Analysis** performed by comparing (two) different model network structures
+  - E.g., non scale-free networks vs. scale-free networks
+  - Degree distribution: power law
 
-- No central authority: 
-  - collective opinions, consensus, polarisation, cultural traits emerge without central coordination results depend on control parameters
+&lt;img src="Figures/scale-free_network.png" width="450" style="display: block; margin: auto;" /&gt;
 
+- **Measurements** of network data for (two) different structures
+  - Mathematically
+  - Computationally
+  - **Statistically**
 
-- Reactive rather than reflective agents: 
-  - no advanced cognitive process, only adaptation to environment (neighbourhood) by following simple rules
-
----
-
-# Voter models of opinion dynamics
-
-- Rate to change opinion depends on other agents:
-  - neighbors (networks, spatial models)
-  - randomly chosen agents (also called mean-field interaction)
-
-
-
-- Principle: *frequency* dependent dynamics. Opinion change based on:
-
-`$$P(1-\theta_{i}|\theta_{i})=\kappa(f)\; f_{i}^{1-\theta_{i}}$$`
-
-- `\(\theta_{i}\)`: opinion of agent `\(i\)`
-- `\(0\leq f_{i}^{1-\theta_{i}} \leq 1\)`: frequency of agents with *opposite* opinions in "neighborhood" of agent `\(i\)`
--  `\(\kappa(f)\)`: response function to frequency of other opinions
-- Analysis question: How does the outcome depend on `\(\kappa(f)\)`?
-
+- **Behavior** of such mathematical models of (two) different network structures
+  - E.g. Dynamic processes on networks
 
 ---
 
-# Linear voter model
+# F.A.Q.
 
+- Power law - explain
 
-- Dynamics: `\(P(1-\theta|\theta)=f^{1-\theta}\)`
-- Stochastic simulation agents update at random on a grid
-- Initially `\(f=0.5\)`, random distribution
-- Results:
-  - coordination of decisions on medium time scales
-  - outcome: consensus as an equilibrium
-  - How long does it take to reach consensus?
-  - Simulation at: `\(t=10^{1}\)`, `\(10^{2}\)`, `\(10^{3}\)`, `\(10^{4}\)`
-&lt;img src="Figures/voter.svg" width="900" style="display: block; margin: auto;" /&gt;
-
----
-# Observations on linear voter model
-
-- In the time limit, always only one opinion exists
-  - Consensus always appears
-  - There are two "absorbing" states: all agents are either 0 or 1
-  - The probability to reach an all 0 or all 1 consensus equals initial frequency `\(f(0)\)`
-
-  
-- Model limitations/drawbacks
-  - very limited social/biological interpretation (remember Social Impact Theory)
-  - what about coexistence of opinions? The reality is not always consensus
-
-
-- Some interesting features for analysis:
-  - Time to reach consensus (TTC)
-  - Intermediate dynamics or dependence on grid topology/network
-
+- Dynamic processes on a network
 
 ---
 
-# Nonlinear voter model functions
-
-- Nonlinear response examples for `\(\kappa(f) f_{i}^{1-\theta_{i}}\)` 
-
-&lt;img src="Figures/voter2.svg" width="650" style="display: block; margin: auto;" /&gt;
-
----
-
-# Coexistence of opinions?
-
-
-- Coexistence can happen for some nonlinear `\(\kappa(f)\)`
-- Absorbing states can be destabilized with small random component in the linear case
-  - small pertubation for `\(f^{1-\theta}=1\)` ( for example `\(\epsilon=10^{-4}\)`)
-  - coordination of decisions on long time scales
-  - asymptotically: coexistence but non-equilibrium
-  - Simulation at: `\(t=10^{1}\)`, `\(10^{2}\)`, `\(10^{3}\)`, `\(10^{4}\)`
-  
-&lt;img src="Figures/voternl.svg" width="900" style="display: block; margin: auto;" /&gt;
----
-
-# Including memory effects
-
-
-- `\(\nu_{i}(\tau_{i})\)`: reluctance of agent `\(i\)` to change opinion `\(\theta_{i}\)`
-  -  persistence time `\(\tau_{i}\)` (opinion was *not* changed) `\(\to\)` "history"
-  - reflects local experience with agents in neighborhood
-
-`$$\frac{d \nu}{d \tau}=\mu\, \nu(1-\nu) \quad \to \quad \nu_{i}= \frac{1}{1+ e^{-\mu \tau_{i}}}$$`
-
-- Decision dynamics: 
-
-`$$w(\theta_{i}^{\prime}|\theta_{i})=\left[1- \nu_{i}(\tau_{i})\right] f_{i}^{\theta_{i}^{\prime}}$$`
-
-- `\(\mu&gt;0\)`: slowing down of opinion dynamics
-- What is the role of `\(\mu\)` in time to consensus (TTC)?
-  
----
-
-# Effect of memory in TTC
-
-&lt;img src="Figures/ttc2.svg" width="525" style="display: block; margin: auto;" /&gt;
-
-*Heterogeneity* of agents important when memory is present:  
-local groups of "confident" agents convince an indifferent neighborhood 
-
----
-
-# Bounded confidence
-
-## 1. The voter model
-
-## *2. Bounded confidence*
-
-## 3. Modeling polarization in the digital society
-
----
-
-## Discrete versus continuous opinion models
+# Random graph ensamble
 
 .pull-left[
-- **Voter models:**
-  - agents are characterized by a discrete opinion (e.g. binary)
-  - adopt other opinions according to their frequency in the agent's neighborhood
-
-
-- **Bounded confidence models:**
-  - *continuous opinions* `\(x_i\)` (e.g. real number between 0 and 1)
-  - agent interactions are randomised and conditional on the difference of their opinions
-]
-
-
-.pull-right[
-
-&lt;img src="Figures/vote.png" width="525" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="Figures/likert.png" width="525" style="display: block; margin: auto;" /&gt;
-]
-
-
----
-
-## The baseline model: pairwise bounded confidence
-
-- Consider a population of `\(N\)` agents `\(i\)` with continuous opinions `\(x_i\)`
-- At each time step any two randomly chosen agents meet
-- Re-adjust opinion if absolute opinion difference is smaller than a threshold `\(\epsilon\)`
-  - In other words: agents `\(i\)` and `\(j\)` with opinions `\(x_i\)` and `\(x_j\)` interact if:
-`$$|x_i-x_j|&lt;\epsilon$$`
-- New opinions are adjusted according to
-`$$x_i(t+1)=x_i(t)+ \zeta \cdot (x_j(t)-x_{i}(t))$$`
-`$$x_j(t+1)=x_j(t)+ \zeta \cdot (x_i(t)-x_j(t))$$`
-
-- `\(\zeta\)` is the convergence parameter: measures speed of opinions approaching
-
----
-
-# Simulation examples
-
-.pull-left[
-&lt;img src="Figures/basic1.png" width="400" style="display: block; margin: auto;" /&gt;
-`\(\epsilon=0.5, \zeta=0.5, N=2000\)`
- ]
-
-.pull-right[
-&lt;img src="Figures/basic2.png" width="400" style="display: block; margin: auto;" /&gt;
-`\(\epsilon=0.2, \zeta=0.5, N=1000\)`
- ]
-
-**Consensus, polarization, and fragmentation are possible outcomes**  
-[Mixing beliefs among interacting agents. Guillaume Deffuant, David Neau, Frederic Amblard and Gerard Weisbuch. Advances in Complex Systems (2000)](https://www.worldscientific.com/doi/abs/10.1142/S0219525900000078)
-
----
-
-# Final opinions vs initial opinions
-
-.pull-left[
-&lt;img src="Figures/basic3.svg" width="500" style="display: block; margin: auto;" /&gt;
-*(Deffuant et al. (2000))*
+&lt;img src="Figures/random_network_graph1.png" width="900" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
-- qualitative dynamics mostly depend on the threshold `\(\epsilon\)`:
-  - controls the number of peaks of the final distribution of opinions
-  - The final expected number of groups is `\(\frac{1}{2\epsilon}\)`
+- Consider a **simple graph** with the following fixed parameters:
+  - Number of vertices (n)
+  - Number of edges (m)
 
-
-- `\(\zeta\)` and `\(N\)` only influence convergence time and width of the
-  distribution of final opinions
-
-- Sometimes you can get "wings" of agents at the edges or stuck between major groups
+- For such **Random graph G(n,m)** created in the following method:
+  - Place edge (m) between (uniformly) random chosen pair
+  - Prevent multiedge/self-edge
+    - Distinct pairing
+    - Only to already not connected vertices
 ]
 
 ---
 
-# Asymmetric confidence model
-
-- **symmetric:** `\(|x_i - x_j| &lt; \epsilon\)`
-- **asymmetric:** `\(-\epsilon_l &lt; x_i - x_j &lt; \epsilon_r\)`
-
-&lt;img src="Figures/Hegselmann-1.svg" width="700" style="display: block; margin: auto;" /&gt;
-Confidence can extend further on one side than on the other
----
-
-# Opinion-independent asymmetry
-
-&lt;img src="Figures/Hegselmann-10.svg" width="1000" style="display: block; margin: auto;" /&gt;
-
-**Collective opinion drifts in the direction favoured by the asymmetry**
-
----
-
-# One-sided splits
-
-&lt;img src="Figures/Hegselmann-13.png" width="700" style="display: block; margin: auto;" /&gt;
-**Asymmetric bounded confidence generates temporary fragmentation!**
-
----
-
-
-# Modeling polarization in the digital society
-
-## 1. The voter model
-
-## 2. Bounded confidence
-
-## *3. Modeling polarization in the digital society*
-
----
-
-## The question of connectivity in the digital society
-
-&lt;img src="Figures/network.jpg" width="700" style="display: block; margin: auto;" /&gt;
-
-**Could more links create polarization?** (see Axelrod's conjecture)
-
-[Tipping diffusivity in information accumulation systems: more links, less consensus. Jae K Shin and Jan Lorenz Journal of Statistical Mechanics: Theory and Experiment (2010)](https://iopscience.iop.org/article/10.1088/1742-5468/2010/06/P06005)
-
----
-
-# The Information Accumulation Model
-
-- n agents with continuous opinions `\(y_i\)` and the following opinion dynamics:
-`$$y_i^{t+1} = (1-\Delta) y_i^ t + \sum_{j \in \Gamma_i} \omega y_j^t (1- |y_i^t|)$$`
-- `\(\Delta\)`: measures how much agents opinions relax over time
-  - In absence of interaction `\(y \to 0\)` 
-
-
-&lt;img src="Figures/Relaxation.gif" width="700" style="display: block; margin: auto;" /&gt;
-
-- Diffusivity `\(\omega\)`: coupling of opinions between agents
-    - Agents approach the opinions of others in their neighborhood
-- Saturation `\(1-|y_i^t|\)`: limits opinions to interval `\((-1,1)\)`
-
----
-
-
-# The Information Accumulation Model
-
-- n agents with continuous opinions `\(y_i\)` and the following opinion dynamics:
-`$$y_i^{t+1} = (1-\Delta) y_i^ t + \sum_{j \in \Gamma_i} \omega y_j^t (1- |y_i^t|)$$`
-- `\(\Delta\)`: measures how much agents opinions relax over time
-  - In absence of interaction `\(y \to 0\)` 
-
-
-- Diffusivity `\(\omega\)`: coupling of opinions between agents
-    - Agents approach the opinions of others in their neighborhood
-
-
-- Saturation `\(1-|y_i^t|\)`: limits opinions to interval `\((-1,1)\)`
-
----
-
-# Interaction in echo chambers
+# Random graph ensamble
 
 .pull-left[
-&lt;img src="Figures/IASCommunities.png" width="450" style="display: block; margin: auto;" /&gt;
+- There is not one but an ensamble of networks that satisfy the fixed constraints, e.g., n=20 and m=22
+
+- Probability of such networks `\(P(G)\)`:
+  - `\(P(G)=1|\omega\)` , for such networks where **omega** is the number of such networks
+  - `\(P(G)=0\)` , for all other networks
 ]
 
 .pull-right[
-
-- Neighborhood `\(\Gamma_i\)` contains:
-  - `\(m_O\)` connections to neighbors in same community
-  - `\(m_X\)` connections to neighbors in the other community
-- Weak inter-community interaction (filter bubble effects):
-  `$$m_O&gt;m_X$$`
-- Intra-community diffusivity: `\(\Omega_O = m_o \omega\)`
-- Inter-community diffusivity: `\(\Omega_x = m_x \omega\)`
-
+&lt;img src="Figures/random_network_graph2.png" width="900" style="display: block; margin: auto;" /&gt;
 ]
 
-
 ---
-# Community dynamics
 
+# Random graph ensamble
 
-Agent dynamics simplifies to community-level variables:
-`\begin{eqnarray*}
-y_{1}^{t+1}&amp;=(1-\Delta) y_{1}^{t}+(\Omega_0 y_{1}^{t}+\Omega_X y_{2}^{t})(1-|y_{1}^{t}|)
-\nonumber \\
-y_{2}^{t+1}&amp;=(1-\Delta) y_{2}^{t}+(\Omega_X y_{1}^{t}+\Omega_0 y_{2}^{t})(1-|y_{2}^{t}|).
-\end{eqnarray*}`
+- Segregated components are also possible
 
-- **00**: no opinion in both communities
-- **PP**, **NN**: consensus (both same sign)
-- **PN**, **NP**: polarization (differn signs)
-
-When `\(t \to \infty\)` in **PN** mode, opinions follow this system of equations:
-`\begin{eqnarray*}
-Y_1&amp;=(1-\Delta)Y_1+(\Omega_0Y_1+\Omega_XY_2)(1-Y_1) \nonumber \\
-Y_2&amp;=(1-\Delta)Y_2+(\Omega_XY_1+\Omega_0Y_2)(1+Y_2). 
-\end{eqnarray*}`
+&lt;img src="Figures/random_network_graph3.png" width="450" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Solutions of model dynamics (I)
+# F.A.Q.
 
-1.  Trivial: **00** mode:
-  - Exists for any combination of parameter values
-  - Only stable if `\(\Omega_O + \Omega_x &lt; \Delta\)` (relaxation `\(&gt;\)` total diffusivity)
-
-2. Consensus: **PP** and **NN** modes:
-    - `\(Y_1 = Y_2 = 1-\frac{\Delta}{\Omega_0+\Omega_X}\)`
-    - Exists when `\(\Omega_0+\Omega_X\geq\Delta\)` (total diffusivity `\(&gt;\)` relaxation)
-    - Always stable
-
-3.  Polarization: **PN** and **NP** modes
+- Simple graph - show simple graph image from wiki
 
 ---
 
-# Solutions of model dynamics (II)
+# Random graph ensamble
 
-1.  Trivial: **00** mode
+- Ensable have *typical* behavior based on **properties (averages)**
+  - Diameter: `\(\langle l \rangle = \sum_{G} P(G)l(G) = \frac{1}{\omega} \sum_{G} l(G)\)`
+  - Number of edges: `\(\langle m \rangle\)`
+  - Degree: `\(\langle k \rangle = 2 \frac{m}{n}\)`
 
-2. Consensus: **PP** and **NN** modes
+- Special cases on the spectrum of probability distributions are not important
+  - E.g. large/small dimeter `\(l\)`
+  - These are not *typical* networks
+  - For large `\(n\)` vertices properties averages tend to concentrate at the ensable averages
 
-3.  Polarization: **PN** and **NP** modes:
-  
-   - `\(-Y_2 = Y_1 = 1-\frac{\Delta}{\Omega_0-\Omega_X}\)`
-   
-    - Exists when `\(\Omega_0-\Omega_X \geq \Delta\)` (difference in diffusivities `\(&gt;\)` relaxation)
-   
-    - Polarization can only be stable if: 
-`$$\Omega_X^T &lt; \Omega_0+\frac{1}{2}\Delta-\frac{1}{2}\sqrt{\Delta^2+8\Omega_0\Delta}$$`
-
+- Such **typical networks** can be analysed analytically
 
 ---
 
-# Opinion Attractors ( `\(\Delta=0.2\)` )
-
-&lt;img src="Figures/IAS-A.svg" width="800" style="display: block; margin: auto;" /&gt;
-
-- Total diffusivity below `\(\Delta\)` ( `\(\Omega_O=0.14\)`, `\(\Omega_X=0.04\)` )
-- Trivial **00** solution
-
----
-
-# Consensus Attractors ( `\(\Delta=0.2\)` )
-
-&lt;img src="Figures/IAS-B.svg" width="800" style="display: block; margin: auto;" /&gt;
-
-- `\(\Omega_0-\Omega_X &lt; \Delta\)`  ( `\(\Omega_O=0.24\)`, `\(\Omega_X=0.08\)` )
-- **00** marginally stable, **PP** and **NN** stable
----
-
-
-# Existence of Polarization  ( `\(\Delta=0.2\)` )
-
-&lt;img src="Figures/IAS-C.svg" width="800" style="display: block; margin: auto;" /&gt;
-
-
-- `\(\Omega_0-\Omega_X &gt; \Delta\)`  ( `\(\Omega_O=0.34\)`, `\(\Omega_X=0.08\)` )
-- **00** unstable, **PN** and **NP** marginally stable, **PP** and **NN** stable
----
-
-# Stable Polarization  ( `\(\Delta=0.2\)` )
-
-&lt;img src="Figures/IAS-D.svg" width="800" style="display: block; margin: auto;" /&gt;
-
-- `\(\Omega_0-\Omega_X &gt; \Delta\)`  ( `\(\Omega_O=0.44\)`, `\(\Omega_X=0.06\)` )
-- **00** unstable, **PN** , **NP**, **PP**, and **NN** stable
----
-
-
-# Tipping diffusivity ratio
-
+# Two interesting random graph ensambles
 
 .pull-left[
-
-**Tipping diffusivity ratio:**
-  Fraction of inter- and intra-diffusivity above which two polarized
-  communities would reach a consensus
-
-`$$\Phi^T=\frac{\Omega_X^T}{\Omega_0}$$`
-Green arrow: fostering consensus by increasing inter-community diffusivity (creating links between groups)
-
+- G(n,m) - given/fixed number of edges `\(m\)`
+- G(n,p) - given/fixed probability of edges `\(p(m)\)`
+  - The edges `\(m\)` are not fixed
+  - The vertices `\(n\)` are fixed
+  
+- E.g., Erdos - Renyi model
 ]
 
 .pull-right[
-
-&lt;img src="Figures/TippingRatio2.svg" width="800" style="display: block; margin: auto;" /&gt;
-
+&lt;img src="Figures/erdos_renyi.png" width="450" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
-# Connectivity can increase polarization
+# G(n,p) ensamble - `\(n\)` fixed, `\(m\)` not-fixed
 
+- Probability of such G(n,p) networks `\(P(G)\)`:
+  - `\(P(G) = p^m(1-p)^{(\frac{n}{2})-m}\)` , for such networks
+  - `\(P(G)=0\)` , for non-simple graphs
 
 .pull-left[
+- p = 0.1
 
-**More links, less consensus effect:**
-For low `\(\frac{\Omega_X}{\Omega_0}\)` there is a level of total diffusivity that creates
-polarization
-
-Red arrow: echo chamber effect is constant (fixed `\(\frac{\Omega_X}{\Omega_0}\)` ), increase in total connectivity (thus increase in `\(\Omega_0\)` ):
-**Polarization appears!**
-
-Only for low `\(\frac{\Omega_X}{\Omega_0}\)`: weakening echo chamber effect fosters consensus above a threshold
-
+&lt;img src="Figures/g_n_p_0_1.png" width="300" style="display: block; margin: auto;" /&gt;
 ]
-
 .pull-right[
+- p = 0.05
 
-&lt;img src="Figures/TippingRatio3.svg" width="800" style="display: block; margin: auto;" /&gt;
-
+&lt;img src="Figures/g_n_p_0_0_5.png" width="300" style="display: block; margin: auto;" /&gt;
 ]
 
+---
+
+# Analytical behavior analysis of G(n,p) ensamble - `\(n\)` fixed, `\(m\)` not-fixed
+
+- Mean number of edges `\(\langle m \rangle\)`
+  - **Distinct vertex pairs** `\(\binom{n}{2}\)` * probability of an edge `\(p\)`; e.g. 190 combinations
+
+`$$\langle m \rangle = \binom{n}{2} p$$`
+- Mean degree of vertex `\(\langle k \rangle\)` a.k.a. `\(c\)`
+  - Number of other vertices `\((n-1)\)` * probability of an edge `\(p\)`
+
+`$$\langle k \rangle = (n-1)p$$`
 
 ---
 
-# Summary
+- Degree distribution `\(p_{k}\)` (for a vertex with `\(k\)` others)
+  - **Distinct vertex pairs** `\(\binom{n-1}{k}\)` * probability of connection with `\(k\)` vertices, but not with others
 
-- The voter model: binary opinions model
-  - Probability to change opinion based on opinions of neighbors
-  - Linear voter model: consensus. Nonlinear model can have coexistence
-  - Adding reluctance to change can speed up consensus
-  
-  
-- Bounded confidence: continuous opinions
-  - Interaction only when opinions are close enough
-  - Generates consensus, polarization, and fragmentation
-  - Asymmetry of thresholds creates one-sided splits
-
-
-- Information accumulation systems
-  - Interaction in echo chambers with relaxation towards zero
-  - Polarization depends on intra- and inter-community diffusivity
-  - Tipping ratio shows that more links can generate polarization
+`$$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$`
 
 ---
 
-# Quiz
+# Example G(n,p) ensamble - `\(n\)` fixed, `\(m\)` not-fixed
 
--  The memory effect in the voter model makes you more or less susceptible to change your opinion?
+.pull-left[
+- n = 20, p = 0.1
+- `\(\langle m \rangle = 190 * 0.1 = 19\)`
+- `\(\langle k \rangle = (20-1) * 0.1 = 1.9\)`
+- `\(p_{3} = 969 * 0.001 * 0.185 = 0.18\)`
+- `\(C = \frac{1.9}{19} = 0.1\)`
 
-- Is the Information Accumulation System a model of binary or continuous opinions?
+&lt;img src="Figures/g_n_p_0_1.png" width="300" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+- n=20, p = 0.05
+- `\(\langle m \rangle = 190 * 0.05 = 9.5\)`
+- `\(\langle k \rangle = (20-1) * 0.05 = 0.95\)`
+- `\(p_{3} = 969 * 0.000125 * 0.44 = 0.05\)`
+- `\(C = \frac{0.95}{19} = 0.05\)`
 
-- If `\(\epsilon=0.2\)`, how many opinion groups can you expect in the bounded confidence model?
+&lt;img src="Figures/g_n_p_0_0_5.png" width="300" style="display: block; margin: auto;" /&gt;
+]
 
-- In the base version of the bounded confidence model, can the number of groups increase during the simulation?
+---
 
-- In our online society, do you expect `\(\Omega_X/\Omega_O\)` to be above or below 1?
+# F.A.Q.
+
+- Binomial distribution
+
+---
+
+# Random graphs
+
+## 1. Random graphs
+
+## *2. Poisson*
+
+## 3. Giant component
+
+---
+
+# Poisson random graph: special case of G(n,p) ensamble for large networks `\(n\rightarrow\infty\)`
+
+- Mean degree `\(c\)`
+  - constant over large networks - number of friends does not depend on the number of people in the world
+  1 . `\(c = (n-1)p \Rightarrow p = \frac{c}{n-1}\)` , `\(n\rightarrow\infty\)`
+    - Vanishingly small probability `\(p\)` of an edge
+    
+- Degree distribution (for a vertex) `\(p_k\)`
+
+`$$p_{k} = e^{-c} \frac{c^{k}}{k!}, n\rightarrow\infty$$`
+---
+
+# Excercise 5
+
+- Show Poisson distribution + large networks
+
+---
+
+# F.A.Q.
+
+- Assymptotically equalt to as some value aproaches the limit
+
+---
+
+# Analytical behavor analysis of G(n,p) ensamble - `\(n\)` fixed, `\(m\)` not-fixed
+
+- Clusering coefficient `\(C\)`
+  - Transitive behavior (property) in a network
+   - What is the probability that two vertex neighbours are also neighbous of each other?
+
+`$$C = \frac{c}{n-1}$$`
+- Poisson random graph: special case of G(n,p) ensamble for large networks `\(n\rightarrow\infty\)`
+  - Clustering coefficient `\(C \simeq 0 , n\rightarrow\infty\)`, if mean degree `\(c\)` is fixed
+  - Difference between the RNG and real-world networks: real-world networks have high clustering coefficient `\(C\)`
+---
+
+# Example Poisson vs. real-world network
+
+.pull-left[
+&lt;img src="Figures/poisson.png" width="600" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="Figures/grid_network.png" width="600" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Random graphs
+
+## 1. Random graphs
+
+## 2. Poisson
+
+## 3. *Giant component*
+
+---
+
+# Poisson random graph: special case of G(n,p) ensamble for large networks `\(n\rightarrow\infty\)`
+
+- Largest component
+  - `\(p = 0\)` ; independent of size `\(n\)`
+    - Disconnected network
+    - `\(n\)` separate components - vertices isolated
+  - `\(p = 1\)` ; dependent of size `\(n\)`
+    - 1-single component
+    - Each vertex is connected to each other
+    - **Giant component**
+  - Most networks (should) have a large component that fills the network (to be able to perform the intended role)
+    - e.g., Internet connected component (infrastructure)
+
+- Behavior: Sensitivity of parameter `\(p[0,1]\)`
+  - How the size to the largest component changes in respect to `\(p\)`?
+    - Expected: The size increases gradually and it is **extensive** around `\(p = 1\)`
+    - Reality: Largest componenet suddenly changes for one particular value of `\(p\)`
+    - **Phase transition**
+
+---
+
+# Analytical behavor analysis of G(n,p) ensamble for large networks `\(n\rightarrow\infty\)`
+
+1. Solution `\(S=0\)` ; small c - no giant component
+  2. Solution `\(S=0 and S&gt;0\)` ; large c - there is giant component
+  - Transition phase happendes in between sna;;/large c, where gradient of the diagonal matches the gradient of the curve for `\(S=0\)`
+  
+- What is the size of the giant component?
+
+- Size of the giant component for `\(c&gt;1\)` is larger than 1. Solution `\(S=0\)`
+  - This is illustrated on Fig 12.1 for all values of c, with limit at `\(c=1\)` for two given cases
+  
+---
+
+# Excercise 7
+
+- Show alreday given models that show phase transition, Schelling, Granovetter
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

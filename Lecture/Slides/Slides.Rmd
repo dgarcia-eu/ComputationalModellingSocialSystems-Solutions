@@ -78,21 +78,14 @@ layout: true
 # Random graphs
 
 - **Networks** that posses a particular property
-  - Which are otherwise random
-  - e.g. fixed parameter: degree distribution
+  - Which are otherwise random (e.g., fixed degree distribution)
 
 - **Analysis** performed by comparing (two) different model network structures
-  - Example:
-    - scale-free networks (degree distribution: power law)
-      - vs.
-    - non scale-free networks (degree distribution: some other law)
+  - E.g., non scale-free networks vs. scale-free networks
+  - Degree distribution: power law
 
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/scale_free_network.svg")
-```
-
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/non_scale_free_network.svg")
+```{r, echo=FALSE, out.width=450, fig.align='center'}
+knitr::include_graphics("Figures/scale-free_network.png")
 ```
 
 - **Measurements** of network data for (two) different structures
@@ -101,51 +94,67 @@ knitr::include_graphics("Figures/non_scale_free_network.svg")
   - **Statistically**
 
 - **Behavior** of such mathematical models of (two) different network structures
-  - e.g. Dynamic processes on networks
+  - E.g. Dynamic processes on networks
 
 ---
 
-
-# Excercise 1
-
-- Show a number of network structure pairs and ask for the feel of behavior
-
 # F.A.Q.
 
-- Power law
+- Power law - explain
 
-- Dynamic prosesses on a network
+- Dynamic processes on a network
 
 ---
 
 # Random graph ensamble
 
+.pull-left[
+```{r, echo=FALSE, out.width=900, fig.align='center'}
+knitr::include_graphics("Figures/random_network_graph1.png")
+```
+]
+
+.pull-right[
 - Consider a **simple graph** with the following fixed parameters:
   - Number of vertices (n)
   - Number of edges (m)
 
 - For such **Random graph G(n,m)** created in the following method:
   - Place edge (m) between (uniformly) random chosen pair
-  - Prevent multiedge and self-edge
-    - Distinct pairin
-    - Only to already not connected verices
+  - Prevent multiedge/self-edge
+    - Distinct pairing
+    - Only to already not connected vertices
+]
 
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/random_graph.svg")
-```
+---
 
-- There is not one but an ensamble of networks that satisfy the fixed constraints
+# Random graph ensamble
+
+.pull-left[
+- There is not one but an ensamble of networks that satisfy the fixed constraints, e.g., n=20 and m=22
 
 - Probability of such networks $P(G)$:
   - $P(G)=1|\omega$ , for such networks where **omega** is the number of such networks
   - $P(G)=0$ , for all other networks
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width=900, fig.align='center'}
+knitr::include_graphics("Figures/random_network_graph2.png")
+```
+]
 
 ---
 
+# Random graph ensamble
 
-# Excercise 2
+- Segregated components are also possible
 
-- Show an example of a fixed n,m random network vs. ensamble of other networks
+```{r, echo=FALSE, out.width=450, fig.align='center'}
+knitr::include_graphics("Figures/random_network_graph3.png")
+```
+
+---
 
 # F.A.Q.
 
@@ -161,94 +170,102 @@ knitr::include_graphics("Figures/random_graph.svg")
   - Degree: $\langle k \rangle = 2 \frac{m}{n}$
 
 - Special cases on the spectrum of probability distributions are not important
-  - e.g. large/small dimeter $l$
+  - E.g. large/small dimeter $l$
   - These are not *typical* networks
   - For large $n$ vertices properties averages tend to concentrate at the ensable averages
 
-- Such **typical networks** can be analysed analitically
+- Such **typical networks** can be analysed analytically
 
 ---
 
 # Two interesting random graph ensambles
 
+.pull-left[
 - G(n,m) - given/fixed number of edges $m$
 - G(n,p) - given/fixed probability of edges $p(m)$
   - The edges $m$ are not fixed
   - The vertices $n$ are fixed
+  
+- E.g., Erdos - Renyi model
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width=450, fig.align='center'}
+knitr::include_graphics("Figures/erdos_renyi.png")
+```
+]
+
+---
+
+# G(n,p) ensamble - $n$ fixed, $m$ not-fixed
 
 - Probability of such G(n,p) networks $P(G)$:
-  - $P(G) = p^m(1-p)^(\frac{n}{2})-m$ , for such networks
+  - $P(G) = p^m(1-p)^{(\frac{n}{2})-m}$ , for such networks
   - $P(G)=0$ , for non-simple graphs
 
-- Probability distribution of edges
-  - Erdos - Renyi
-  - Poisson random network graph
-  - Bernoulli random network graph
+.pull-left[
+- p = 0.1
 
-
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/erdos_renyi_graph.svg")
+```{r, echo=FALSE, out.width=300, fig.align='center'}
+knitr::include_graphics("Figures/g_n_p_0_1.png")
 ```
+]
+.pull-right[
+- p = 0.05
 
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/poison_graph.svg")
+```{r, echo=FALSE, out.width=300, fig.align='center'}
+knitr::include_graphics("Figures/g_n_p_0_0_5.png")
 ```
-
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/bernoulli_graph.svg")
-```
-
----
-
-# Excercise 3
-
-- Give example of different probability distributions of G(n,p) and ask for behavior traits
+]
 
 ---
 
 # Analytical behavior analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
 
-- Mean number of edges $\langle m \rangle$ (expected)
-  - What is the number of graphs with exactly (n,m) between **distinct vertex pairs** $\binom{n}{2}$
-    - Every graph has the same (unifrom) probability $P(G)$:
+- Mean number of edges $\langle m \rangle$
+  - **Distinct vertex pairs** $\binom{n}{2}$ * probability of an edge $p$; e.g. 190 combinations
 
-$$P(G) = p^m(1-p)^(\frac{n}{2})-m$$
+$$\langle m \rangle = \binom{n}{2} p$$
+- Mean degree of vertex $\langle k \rangle$ a.k.a. $c$
+  - Number of other vertices $(n-1)$ * probability of an edge $p$
 
-  - What is the probability of drawing a graph (selecting on random) with exactly $m$ edges from the ensamble G(n,p)?
-
-$$P(m) = \binom{\binom{n}{2}}{m}p^m(1-p)^(\frac{n}{2})-m$$
-
-    - this is a **binomial distribution**, so it gets easy to solve
-
-$$\langle m \rangle = \sum_{m=0}^{\binom{n}{2}}mP(m) = \binom{n}{2} p$$
-
-    - distinct vertex pairs * probability of an edge
-
-- Mean degree of vertex $$\langle k \rangle$$ a.k.a. $c$
-  - Mean degree $$\langle k \rangle = \frac{2m}{n}$$, where $n$ is a fixed constant
-
-$$\langle k \rangle = \sum_{m=0}^{\binom{n}{2}} \frac{2m}{n} P(m) = \frac{2}{n}\binom{n}{2}p = (n-1)p$$
-
-    - number of other vertices * probability of an edge
-    - $\langle k \rangle == c$
+$$\langle k \rangle = (n-1)p$$
 
 ---
 
-# Analytical behavior analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
-
-- Degree distribution $p_{k}$ (for a vertex)
-  - What is the probability of a vertex connected to $k$ other vertices (and not with others)?
-    - $p^{k}(1-p)^{n-1-k}$ , with $\binom{n-1}{k}$ distinct vertex pairs
+- Degree distribution $p_{k}$ (for a vertex with $k$ others)
+  - **Distinct vertex pairs** $\binom{n-1}{k}$ * probability of connection with $k$ vertices, but not with others
 
 $$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$
 
-    - this is again a **binomial distribution**, so it gets easy to solve
-
 ---
 
-# Excercise 4
+# Example G(n,p) ensamble - $n$ fixed, $m$ not-fixed
 
-- Show examples of these behaviors analytics on a network
+.pull-left[
+- n = 20, p = 0.1
+- $\langle m \rangle = 190 * 0.1 = 19$
+- $\langle k \rangle = (20-1) * 0.1 = 1.9$
+- $p_{3} = 969 * 0.001 * 0.185 = 0.18$
+- $C = \frac{1.9}{19} = 0.1$
+
+```{r, echo=FALSE, out.width=300, fig.align='center'}
+knitr::include_graphics("Figures/g_n_p_0_1.png")
+```
+]
+.pull-right[
+- n=20, p = 0.05
+- $\langle m \rangle = 190 * 0.05 = 9.5$
+- $\langle k \rangle = (20-1) * 0.05 = 0.95$
+- $p_{3} = 969 * 0.000125 * 0.44 = 0.05$
+- $C = \frac{0.95}{19} = 0.05$
+
+```{r, echo=FALSE, out.width=300, fig.align='center'}
+knitr::include_graphics("Figures/g_n_p_0_0_5.png")
+```
+]
+
+---
 
 # F.A.Q.
 
@@ -256,36 +273,33 @@ $$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$
 
 ---
 
+# Random graphs
+
+## 1. Random graphs
+
+## *2. Poisson*
+
+## 3. Giant component
+
+---
+
 # Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
 - Mean degree $c$
-  - constant - number of friends does not depend on the number of people in the world
+  - constant over large networks - number of friends does not depend on the number of people in the world
   1 . $c = (n-1)p \Rightarrow p = \frac{c}{n-1}$ , $n\rightarrow\infty$
-    - Vanishingly small p
-
+    - Vanishingly small probability $p$ of an edge
+    
 - Degree distribution (for a vertex) $p_k$
 
-$$ln[(1-p)^{n-1-k}] = (n-1-k)ln(1-\frac{c}{n-1}) \simeq -(n-1-k)\frac{c}{n-1} \simeq -c
-
-  - Expand the logarithm as Tayler series
-  - Becmoes more exact as $n\rightarrow\infty$
-  - $(1-p)^{n-1-k} = e^{-c}$
-  - Taking the exponent of both sides, $n\rightarrow\infty$
-
-$$\binom{n-1}{k} = \frac{(n-1)!}{(n-1-k)!k!} \simeq \frac{(n-1)^{k}}{k!}, $n\rightarrow\infty$
-
-$$p_{k} = \binom{n-1}{k}p^k(1-p)^{n-1-k}$$
-
-  - Poissons (degree) distribution for G(n,p) when $n\rightarrow\infty$
-
-$$p_{k} = \frac{(n-1)^k}{k!}p^k e^{-c} = \frac{(n-1)^k}{k!} (\frac{c}{n-1})^k e^{-c} = e^{-c} \frac{c^{k}}{k!}$$ , $n\rightarrow\infty$
-
-
+$$p_{k} = e^{-c} \frac{c^{k}}{k!}, n\rightarrow\infty$$
 ---
 
 # Excercise 5
 
 - Show Poisson distribution + large networks
+
+---
 
 # F.A.Q.
 
@@ -297,31 +311,42 @@ $$p_{k} = \frac{(n-1)^k}{k!}p^k e^{-c} = \frac{(n-1)^k}{k!} (\frac{c}{n-1})^k e^
 
 - Clusering coefficient $C$
   - Transitive behavior (property) in a network
-  - What is the probability that two vertices are connected (neighbours)?
-
-$$p = \frac{c}{n-1}$$
-
-  - What is the probability that two vertex neighbours are also neighbous of each other?
+   - What is the probability that two vertex neighbours are also neighbous of each other?
 
 $$C = \frac{c}{n-1}$$
-
-    - Exactly the same
-
 - Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
-  - Clusering coefficient $C \simeq 0 , n\rightarrow\infty$, if mean degree $c$ is fixed
+  - Clustering coefficient $C \simeq 0 , n\rightarrow\infty$, if mean degree $c$ is fixed
   - Difference between the RNG and real-world networks: real-world networks have high clustering coefficient $C$
+---
+
+# Example Poisson vs. real-world network
+
+.pull-left[
+```{r, echo=FALSE, out.width=600, fig.align='center'}
+knitr::include_graphics("Figures/poisson.png")
+```
+]
+.pull-right[
+```{r, echo=FALSE, out.width=600, fig.align='center'}
+knitr::include_graphics("Figures/grid_network.png")
+```
+]
 
 ---
 
-# Excercise 6
+# Random graphs
 
-- Show Poisson RNG $n\rightarrow\infty$ and real-world networks and ask for difference - social network
+## 1. Random graphs
+
+## 2. Poisson
+
+## 3. *Giant component*
 
 ---
 
 # Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
-- Property: largest component (qualitative difference)
+- Largest component
   - $p = 0$ ; independent of size $n$
     - Disconnected network
     - $n$ separate components - vertices isolated
@@ -337,567 +362,22 @@ $$C = \frac{c}{n-1}$$
     - Expected: The size increases gradually and it is **extensive** around $p = 1$
     - Reality: Largest componenet suddenly changes for one particular value of $p$
     - **Phase transition**
-  - Size of giant component
-    - Let $u$ be fraction of vertices not connected to the giant component
-      - $u = 1$ , if there is no giant component
-      - $u < 1$ , if there is giant component
 
 ---
 
 # Analytical behavor analysis of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
-- What is the probability that the vertex is not connected to the giant component through any of the $n-1$ other vertices in the newtork?
-  1. Probability that a vertex $v_{i}$ is not connected to other vertex $v_{j}$
-
-$$1 - p$$
-
-  2. Probability that a vertex $v_{i}$ is connected to other vertex $v_{j}$, but $v_{j}$ is not connected to giant component
-
-$$pu$$ , probability of an edge * probability that the $v_{j}$ doesn't belong to giant component
-
-    - This should be recursive for all other vetices, apart from $v_{i}$
-    - For $n\rightarrow\infty$, this doesn't change much from $n-1$ and $n-2$, excuding $v_{i}$ and $v_{j}$ respectivelly
-  - Total probability: $1 - p + pu$
-
-$$u = (1-p+pu)^{n-1} = [1 - \frac{c}{n-1}(1-u)]^{n-1}$$
-
-$$ ln u = (n-1)ln[1-\frac{c}{n-1}(1-u)] \simeq -(n-1)\frac{c}{n-1}(1-u) = c(1-u); $n\rightarrow\infty$
-
-$$u = e^{-c(1-u)}$$ ; fraction of vertices not in giant component
-
-$$S = 1-u = 1 - e^{-cS}$$ ; fraction of vertices in giant component
-
-  - Doesn't have simple solution for $S$ in closed form, but possible to plot
-  - e.g., for plotting: $c = - \frac{ln(1-S)}{S}$, using Lambert W-function
-
-- Slide Fig. 12.1 complete
-  1. Solution $S=0$ ; small c - no giant component
+1. Solution $S=0$ ; small c - no giant component
   2. Solution $S=0 and S>0$ ; large c - there is giant component
   - Transition phase happendes in between sna;;/large c, where gradient of the diagonal matches the gradient of the curve for $S=0$
+  
+- What is the size of the giant component?
 
-$$\frac{d}{dS}(1-e^{-cS})=1$$
-
-$$ce^{-cS}=1$$ ; setting $S=0$ - pahse transition point $c=1$
-
-  - therefore RNG can have a giant component only if $c>1$
-  - if $c\leq1$ than $S=0$ and there is no giant component
-
+- Size of the giant component for $c>1$ is larger than 1. Solution $S=0$
+  - This is illustrated on Fig 12.1 for all values of c, with limit at $c=1$ for two given cases
+  
 ---
 
 # Excercise 7
 
 - Show alreday given models that show phase transition, Schelling, Granovetter
-
----
-
-# Final problem: What is the size of the giant component?
-
-- Already proven: for $c\leq1$ than $S=0$ and there is no giant component - $S=0$
-- Need to prove: for $c>1$ there is giant component
-  - Two solutions $S=0 and S>0$, which one is true?
-  - Proof: Fig 12.2
-
-- Size of the giant component for $c>1$ is larger than 1. Solution $S=0$
-  - This is illustrated on Fig 12.1 for all values of c, with limit at $c=1$ for two given cases
----
-
-# Voter models of opinion dynamics
-
-- Rate to change opinion depends on other agents:
-  - neighbors (networks, spatial models)
-  - randomly chosen agents (also called mean-field interaction)
-
-
-
-- Principle: *frequency* dependent dynamics. Opinion change based on:
-
-$$P(1-\theta_{i}|\theta_{i})=\kappa(f)\; f_{i}^{1-\theta_{i}}$$
-
-- $\theta_{i}$: opinion of agent $i$
-- $0\leq f_{i}^{1-\theta_{i}} \leq 1$: frequency of agents with *opposite* opinions in "neighborhood" of agent $i$
--  $\kappa(f)$: response function to frequency of other opinions
-- Analysis question: How does the outcome depend on $\kappa(f)$?
-
-
----
-
-# Linear voter model
-
-
-- Dynamics: $P(1-\theta|\theta)=f^{1-\theta}$
-- Stochastic simulation agents update at random on a grid
-- Initially $f=0.5$, random distribution
-- Results:
-  - coordination of decisions on medium time scales
-  - outcome: consensus as an equilibrium
-  - How long does it take to reach consensus?
-  - Simulation at: $t=10^{1}$, $10^{2}$, $10^{3}$, $10^{4}$
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/voter.svg")
-```
-
----
-# Observations on linear voter model
-
-- In the time limit, always only one opinion exists
-  - Consensus always appears
-  - There are two "absorbing" states: all agents are either 0 or 1
-  - The probability to reach an all 0 or all 1 consensus equals initial frequency $f(0)$
-
-  
-- Model limitations/drawbacks
-  - very limited social/biological interpretation (remember Social Impact Theory)
-  - what about coexistence of opinions? The reality is not always consensus
-
-
-- Some interesting features for analysis:
-  - Time to reach consensus (TTC)
-  - Intermediate dynamics or dependence on grid topology/network
-
-
----
-
-# Nonlinear voter model functions
-
-- Nonlinear response examples for $\kappa(f) f_{i}^{1-\theta_{i}}$ 
-
-```{r, echo=FALSE, out.width=650, fig.align='center'}
-knitr::include_graphics("Figures/voter2.svg")
-```
-
----
-
-# Coexistence of opinions?
-
-
-- Coexistence can happen for some nonlinear $\kappa(f)$
-- Absorbing states can be destabilized with small random component in the linear case
-  - small pertubation for $f^{1-\theta}=1$ ( for example $\epsilon=10^{-4}$)
-  - coordination of decisions on long time scales
-  - asymptotically: coexistence but non-equilibrium
-  - Simulation at: $t=10^{1}$, $10^{2}$, $10^{3}$, $10^{4}$
-  
-```{r, echo=FALSE, out.width=900, fig.align='center'}
-knitr::include_graphics("Figures/voternl.svg")
-```
----
-
-# Including memory effects
-
-
-- $\nu_{i}(\tau_{i})$: reluctance of agent $i$ to change opinion $\theta_{i}$
-  -  persistence time $\tau_{i}$ (opinion was *not* changed) $\to$ "history"
-  - reflects local experience with agents in neighborhood
-
-$$\frac{d \nu}{d \tau}=\mu\, \nu(1-\nu) \quad \to \quad \nu_{i}= \frac{1}{1+ e^{-\mu \tau_{i}}}$$
-
-- Decision dynamics: 
-
-$$w(\theta_{i}^{\prime}|\theta_{i})=\left[1- \nu_{i}(\tau_{i})\right] f_{i}^{\theta_{i}^{\prime}}$$
-
-- $\mu>0$: slowing down of opinion dynamics
-- What is the role of $\mu$ in time to consensus (TTC)?
-  
----
-
-# Effect of memory in TTC
-
-```{r, echo=FALSE, out.width=525, fig.align='center'}
-knitr::include_graphics("Figures/ttc2.svg")
-```
-
-*Heterogeneity* of agents important when memory is present:  
-local groups of "confident" agents convince an indifferent neighborhood 
-
----
-
-# Bounded confidence
-
-## 1. The voter model
-
-## *2. Bounded confidence*
-
-## 3. Modeling polarization in the digital society
-
----
-
-## Discrete versus continuous opinion models
-
-.pull-left[
-- **Voter models:**
-  - agents are characterized by a discrete opinion (e.g. binary)
-  - adopt other opinions according to their frequency in the agent's neighborhood
-
-
-- **Bounded confidence models:**
-  - *continuous opinions* $x_i$ (e.g. real number between 0 and 1)
-  - agent interactions are randomised and conditional on the difference of their opinions
-]
-
-
-.pull-right[
-
-```{r, echo=FALSE, out.width=525, fig.align='center'}
-knitr::include_graphics("Figures/vote.png")
-```
-
-```{r, echo=FALSE, out.width=525, fig.align='center'}
-knitr::include_graphics("Figures/likert.png")
-```
-]
-
-
----
-
-## The baseline model: pairwise bounded confidence
-
-- Consider a population of $N$ agents $i$ with continuous opinions $x_i$
-- At each time step any two randomly chosen agents meet
-- Re-adjust opinion if absolute opinion difference is smaller than a threshold $\epsilon$
-  - In other words: agents $i$ and $j$ with opinions $x_i$ and $x_j$ interact if:
-$$|x_i-x_j|<\epsilon$$
-- New opinions are adjusted according to
-$$x_i(t+1)=x_i(t)+ \zeta \cdot (x_j(t)-x_{i}(t))$$
-$$x_j(t+1)=x_j(t)+ \zeta \cdot (x_i(t)-x_j(t))$$
-
-- $\zeta$ is the convergence parameter: measures speed of opinions approaching
-
----
-
-# Simulation examples
-
-.pull-left[
-```{r, echo=FALSE, out.width=400, fig.align='center'}
-knitr::include_graphics("Figures/basic1.png")
-```
-$\epsilon=0.5, \zeta=0.5, N=2000$
- ]
-
-.pull-right[
-```{r, echo=FALSE, out.width=400, fig.align='center'}
-knitr::include_graphics("Figures/basic2.png")
-```
-$\epsilon=0.2, \zeta=0.5, N=1000$
- ]
-
-**Consensus, polarization, and fragmentation are possible outcomes**  
-[Mixing beliefs among interacting agents. Guillaume Deffuant, David Neau, Frederic Amblard and Gerard Weisbuch. Advances in Complex Systems (2000)](https://www.worldscientific.com/doi/abs/10.1142/S0219525900000078)
-
----
-
-# Final opinions vs initial opinions
-
-.pull-left[
-```{r, echo=FALSE, out.width=500, fig.align='center'}
-knitr::include_graphics("Figures/basic3.svg")
-```
-*(Deffuant et al. (2000))*
-]
-
-.pull-right[
-- qualitative dynamics mostly depend on the threshold $\epsilon$:
-  - controls the number of peaks of the final distribution of opinions
-  - The final expected number of groups is $\frac{1}{2\epsilon}$
-
-
-- $\zeta$ and $N$ only influence convergence time and width of the
-  distribution of final opinions
-
-- Sometimes you can get "wings" of agents at the edges or stuck between major groups
-]
-
----
-
-# Asymmetric confidence model
-
-- **symmetric:** $|x_i - x_j| < \epsilon$
-- **asymmetric:** $-\epsilon_l < x_i - x_j < \epsilon_r$
-
-```{r, echo=FALSE, out.width=700, fig.align='center'}
-knitr::include_graphics("Figures/Hegselmann-1.svg")
-```
-Confidence can extend further on one side than on the other
----
-
-# Opinion-independent asymmetry
-
-```{r, echo=FALSE, out.width=1000, fig.align='center'}
-knitr::include_graphics("Figures/Hegselmann-10.svg")
-```
-
-**Collective opinion drifts in the direction favoured by the asymmetry**
-
----
-
-# One-sided splits
-
-```{r, echo=FALSE, out.width=700, fig.align='center'}
-knitr::include_graphics("Figures/Hegselmann-13.png")
-```
-**Asymmetric bounded confidence generates temporary fragmentation!**
-
----
-
-
-# Modeling polarization in the digital society
-
-## 1. The voter model
-
-## 2. Bounded confidence
-
-## *3. Modeling polarization in the digital society*
-
----
-
-## The question of connectivity in the digital society
-
-```{r, echo=FALSE, out.width=700, fig.align='center'}
-knitr::include_graphics("Figures/network.jpg")
-```
-
-**Could more links create polarization?** (see Axelrod's conjecture)
-
-[Tipping diffusivity in information accumulation systems: more links, less consensus. Jae K Shin and Jan Lorenz Journal of Statistical Mechanics: Theory and Experiment (2010)](https://iopscience.iop.org/article/10.1088/1742-5468/2010/06/P06005)
-
----
-
-# The Information Accumulation Model
-
-- n agents with continuous opinions $y_i$ and the following opinion dynamics:
-$$y_i^{t+1} = (1-\Delta) y_i^ t + \sum_{j \in \Gamma_i} \omega y_j^t (1- |y_i^t|)$$
-- $\Delta$: measures how much agents opinions relax over time
-  - In absence of interaction $y \to 0$ 
-
-
-```{r, echo=FALSE, out.width=700, fig.align='center'}
-knitr::include_graphics("Figures/Relaxation.gif")
-```
-
-- Diffusivity $\omega$: coupling of opinions between agents
-    - Agents approach the opinions of others in their neighborhood
-- Saturation $1-|y_i^t|$: limits opinions to interval $(-1,1)$
-
----
-
-
-# The Information Accumulation Model
-
-- n agents with continuous opinions $y_i$ and the following opinion dynamics:
-$$y_i^{t+1} = (1-\Delta) y_i^ t + \sum_{j \in \Gamma_i} \omega y_j^t (1- |y_i^t|)$$
-- $\Delta$: measures how much agents opinions relax over time
-  - In absence of interaction $y \to 0$ 
-
-
-- Diffusivity $\omega$: coupling of opinions between agents
-    - Agents approach the opinions of others in their neighborhood
-
-
-- Saturation $1-|y_i^t|$: limits opinions to interval $(-1,1)$
-
----
-
-# Interaction in echo chambers
-
-.pull-left[
-```{r, echo=FALSE, out.width=450, fig.align='center'}
-knitr::include_graphics("Figures/IASCommunities.png")
-```
-]
-
-.pull-right[
-
-- Neighborhood $\Gamma_i$ contains:
-  - $m_O$ connections to neighbors in same community
-  - $m_X$ connections to neighbors in the other community
-- Weak inter-community interaction (filter bubble effects):
-  $$m_O>m_X$$
-- Intra-community diffusivity: $\Omega_O = m_o \omega$
-- Inter-community diffusivity: $\Omega_x = m_x \omega$
-
-]
-
-
----
-# Community dynamics
-
-
-Agent dynamics simplifies to community-level variables:
-\begin{eqnarray*}
-y_{1}^{t+1}&=(1-\Delta) y_{1}^{t}+(\Omega_0 y_{1}^{t}+\Omega_X y_{2}^{t})(1-|y_{1}^{t}|)
-\nonumber \\
-y_{2}^{t+1}&=(1-\Delta) y_{2}^{t}+(\Omega_X y_{1}^{t}+\Omega_0 y_{2}^{t})(1-|y_{2}^{t}|).
-\end{eqnarray*}
-
-- **00**: no opinion in both communities
-- **PP**, **NN**: consensus (both same sign)
-- **PN**, **NP**: polarization (differn signs)
-
-When $t \to \infty$ in **PN** mode, opinions follow this system of equations:
-\begin{eqnarray*}
-Y_1&=(1-\Delta)Y_1+(\Omega_0Y_1+\Omega_XY_2)(1-Y_1) \nonumber \\
-Y_2&=(1-\Delta)Y_2+(\Omega_XY_1+\Omega_0Y_2)(1+Y_2). 
-\end{eqnarray*}
-
----
-
-# Solutions of model dynamics (I)
-
-1.  Trivial: **00** mode:
-  - Exists for any combination of parameter values
-  - Only stable if $\Omega_O + \Omega_x < \Delta$ (relaxation $>$ total diffusivity)
-
-2. Consensus: **PP** and **NN** modes:
-    - $Y_1 = Y_2 = 1-\frac{\Delta}{\Omega_0+\Omega_X}$
-    - Exists when $\Omega_0+\Omega_X\geq\Delta$ (total diffusivity $>$ relaxation)
-    - Always stable
-
-3.  Polarization: **PN** and **NP** modes
-
----
-
-# Solutions of model dynamics (II)
-
-1.  Trivial: **00** mode
-
-2. Consensus: **PP** and **NN** modes
-
-3.  Polarization: **PN** and **NP** modes:
-  
-   - $-Y_2 = Y_1 = 1-\frac{\Delta}{\Omega_0-\Omega_X}$
-   
-    - Exists when $\Omega_0-\Omega_X \geq \Delta$ (difference in diffusivities $>$ relaxation)
-   
-    - Polarization can only be stable if: 
-$$\Omega_X^T < \Omega_0+\frac{1}{2}\Delta-\frac{1}{2}\sqrt{\Delta^2+8\Omega_0\Delta}$$
-
-
----
-
-# Opinion Attractors ( $\Delta=0.2$ )
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/IAS-A.svg")
-```
-
-- Total diffusivity below $\Delta$ ( $\Omega_O=0.14$, $\Omega_X=0.04$ )
-- Trivial **00** solution
-
----
-
-# Consensus Attractors ( $\Delta=0.2$ )
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/IAS-B.svg")
-```
-
-- $\Omega_0-\Omega_X < \Delta$  ( $\Omega_O=0.24$, $\Omega_X=0.08$ )
-- **00** marginally stable, **PP** and **NN** stable
----
-
-
-# Existence of Polarization  ( $\Delta=0.2$ )
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/IAS-C.svg")
-```
-
-
-- $\Omega_0-\Omega_X > \Delta$  ( $\Omega_O=0.34$, $\Omega_X=0.08$ )
-- **00** unstable, **PN** and **NP** marginally stable, **PP** and **NN** stable
----
-
-# Stable Polarization  ( $\Delta=0.2$ )
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/IAS-D.svg")
-```
-
-- $\Omega_0-\Omega_X > \Delta$  ( $\Omega_O=0.44$, $\Omega_X=0.06$ )
-- **00** unstable, **PN** , **NP**, **PP**, and **NN** stable
----
-
-
-# Tipping diffusivity ratio
-
-
-.pull-left[
-
-**Tipping diffusivity ratio:**
-  Fraction of inter- and intra-diffusivity above which two polarized
-  communities would reach a consensus
-
-$$\Phi^T=\frac{\Omega_X^T}{\Omega_0}$$
-Green arrow: fostering consensus by increasing inter-community diffusivity (creating links between groups)
-
-]
-
-.pull-right[
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/TippingRatio2.svg")
-```
-
-]
-
----
-
-# Connectivity can increase polarization
-
-
-.pull-left[
-
-**More links, less consensus effect:**
-For low $\frac{\Omega_X}{\Omega_0}$ there is a level of total diffusivity that creates
-polarization
-
-Red arrow: echo chamber effect is constant (fixed $\frac{\Omega_X}{\Omega_0}$ ), increase in total connectivity (thus increase in $\Omega_0$ ):
-**Polarization appears!**
-
-Only for low $\frac{\Omega_X}{\Omega_0}$: weakening echo chamber effect fosters consensus above a threshold
-
-]
-
-.pull-right[
-
-```{r, echo=FALSE, out.width=800, fig.align='center'}
-knitr::include_graphics("Figures/TippingRatio3.svg")
-```
-
-]
-
-
----
-
-# Summary
-
-- The voter model: binary opinions model
-  - Probability to change opinion based on opinions of neighbors
-  - Linear voter model: consensus. Nonlinear model can have coexistence
-  - Adding reluctance to change can speed up consensus
-  
-  
-- Bounded confidence: continuous opinions
-  - Interaction only when opinions are close enough
-  - Generates consensus, polarization, and fragmentation
-  - Asymmetry of thresholds creates one-sided splits
-
-
-- Information accumulation systems
-  - Interaction in echo chambers with relaxation towards zero
-  - Polarization depends on intra- and inter-community diffusivity
-  - Tipping ratio shows that more links can generate polarization
-
----
-
-# Quiz
-
--  The memory effect in the voter model makes you more or less susceptible to change your opinion?
-
-- Is the Information Accumulation System a model of binary or continuous opinions?
-
-- If $\epsilon=0.2$, how many opinion groups can you expect in the bounded confidence model?
-
-- In the base version of the bounded confidence model, can the number of groups increase during the simulation?
-
-- In our online society, do you expect $\Omega_X/\Omega_O$ to be above or below 1?
-
