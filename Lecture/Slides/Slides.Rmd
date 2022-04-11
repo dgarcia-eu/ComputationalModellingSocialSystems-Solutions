@@ -280,6 +280,125 @@ $$p_{k} = \binom{n-1}{k}p^k(1-p)^{n-1-k}$$
 
 $$p_{k} = \frac{(n-1)^k}{k!}p^k e^{-c} = \frac{(n-1)^k}{k!} (\frac{c}{n-1})^k e^{-c} = e^{-c} \frac{c^{k}}{k!}$$ , $n\rightarrow\infty$
 
+
+---
+
+# Excercise 5
+
+- Show Poisson distribution + large networks
+
+# F.A.Q.
+
+- Assymptotically equalt to as some value aproaches the limit
+
+---
+
+# Analytical behavor analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
+
+- Clusering coefficient $C$
+  - Transitive behavior (property) in a network
+  - What is the probability that two vertices are connected (neighbours)?
+
+$$p = \frac{c}{n-1}$$
+
+  - What is the probability that two vertex neighbours are also neighbous of each other?
+
+$$C = \frac{c}{n-1}$$
+
+    - Exactly the same
+
+- Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
+  - Clusering coefficient $C \simeq 0 , n\rightarrow\infty$, if mean degree $c$ is fixed
+  - Difference between the RNG and real-world networks: real-world networks have high clustering coefficient $C$
+
+---
+
+# Excercise 6
+
+- Show Poisson RNG $n\rightarrow\infty$ and real-world networks and ask for difference - social network
+
+---
+
+# Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
+
+- Property: largest component (qualitative difference)
+  - $p = 0$ ; independent of size $n$
+    - Disconnected network
+    - $n$ separate components - vertices isolated
+  - $p = 1$ ; dependent of size $n$
+    - 1-single component
+    - Each vertex is connected to each other
+    - **Giant component**
+  - Most networks (should) have a large component that fills the network (to be able to perform the intended role)
+    - e.g., Internet connected component (infrastructure)
+
+- Behavior: Sensitivity of parameter $p[0,1]$
+  - How the size to the largest component changes in respect to $p$?
+    - Expected: The size increases gradually and it is **extensive** around $p = 1$
+    - Reality: Largest componenet suddenly changes for one particular value of $p$
+    - **Phase transition**
+  - Size of giant component
+    - Let $u$ be fraction of vertices not connected to the giant component
+      - $u = 1$ , if there is no giant component
+      - $u < 1$ , if there is giant component
+
+---
+
+# Analytical behavor analysis of G(n,p) ensamble for large networks $n\rightarrow\infty$
+
+- What is the probability that the vertex is not connected to the giant component through any of the $n-1$ other vertices in the newtork?
+  1. Probability that a vertex $v_{i}$ is not connected to other vertex $v_{j}$
+
+$$1 - p$$
+
+  2. Probability that a vertex $v_{i}$ is connected to other vertex $v_{j}$, but $v_{j}$ is not connected to giant component
+
+$$pu$$ , probability of an edge * probability that the $v_{j}$ doesn't belong to giant component
+
+    - This should be recursive for all other vetices, apart from $v_{i}$
+    - For $n\rightarrow\infty$, this doesn't change much from $n-1$ and $n-2$, excuding $v_{i}$ and $v_{j}$ respectivelly
+  - Total probability: $1 - p + pu$
+
+$$u = (1-p+pu)^{n-1} = [1 - \frac{c}{n-1}(1-u)]^{n-1}$$
+
+$$ ln u = (n-1)ln[1-\frac{c}{n-1}(1-u)] \simeq -(n-1)\frac{c}{n-1}(1-u) = c(1-u); $n\rightarrow\infty$
+
+$$u = e^{-c(1-u)}$$ ; fraction of vertices not in giant component
+
+$$S = 1-u = 1 - e^{-cS}$$ ; fraction of vertices in giant component
+
+  - Doesn't have simple solution for $S$ in closed form, but possible to plot
+  - e.g., for plotting: $c = - \frac{ln(1-S)}{S}$, using Lambert W-function
+
+- Slide Fig. 12.1 complete
+  1. Solution $S=0$ ; small c - no giant component
+  2. Solution $S=0 and S>0$ ; large c - there is giant component
+  - Transition phase happendes in between sna;;/large c, where gradient of the diagonal matches the gradient of the curve for $S=0$
+
+$$\frac{d}{dS}(1-e^{-cS})=1$$
+
+$$ce^{-cS}=1$$ ; setting $S=0$ - pahse transition point $c=1$
+
+  - therefore RNG can have a giant component only if $c>1$
+  - if $c\leq1$ than $S=0$ and there is no giant component
+
+---
+
+# Excercise 7
+
+- Show alreday given models that show phase transition, Schelling, Granovetter
+
+---
+
+# Final problem: What is the size of the giant component?
+
+- Already proven: for $c\leq1$ than $S=0$ and there is no giant component - $S=0$
+- Need to prove: for $c>1$ there is giant component
+  - Two solutions $S=0 and S>0$, which one is true?
+  - Proof: Fig 12.2
+
+- Size of the giant component for $c>1$ is larger than 1. Solution $S=0$
+  - This is illustrated on Fig 12.1 for all values of c, with limit at $c=1$ for two given cases
 ---
 
 # Voter models of opinion dynamics
