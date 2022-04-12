@@ -63,6 +63,8 @@ layout: true
 
 ## 3. Giant component
 
+## 4. Null models
+
 ---
 
 # Random graphs
@@ -72,6 +74,8 @@ layout: true
 ## 2. Poisson
 
 ## 3. Giant component
+
+## 4. Null models
 
 ---
 
@@ -87,6 +91,10 @@ layout: true
 ```{r, echo=FALSE, out.width=450, fig.align='center'}
 knitr::include_graphics("Figures/scale-free_network.png")
 ```
+
+---
+
+# Random graphs
 
 - **Measurements** of network data for (two) different structures
   - Mathematically
@@ -121,9 +129,9 @@ knitr::include_graphics("Figures/random_network_graph1.png")
 
 - For such **Random graph G(n,m)** created in the following method:
   - Place edge (m) between (uniformly) random chosen pair
-  - Prevent multiedge/self-edge
-    - Distinct pairing
-    - Only to already not connected vertices
+  - Prevent multiedge/self-edge by:
+  - Distinct pairing
+  - Only to already not connected vertices
 ]
 
 ---
@@ -131,10 +139,11 @@ knitr::include_graphics("Figures/random_network_graph1.png")
 # Random graph ensamble
 
 .pull-left[
-- There is not one but an ensamble of networks that satisfy the fixed constraints, e.g., n=20 and m=22
+- There is not one but an ensamble of networks that satisfy the fixed constraints
+  - E.g., for n=20 and m=22
 
-- Probability of such networks $P(G)$:
-  - $P(G)=1|\omega$ , for such networks where **omega** is the number of such networks
+- Probability of such networks $P(G)$
+  - $P(G)=\frac{1}{\omega}$ , for such networks where **$\omega$** is the number of such networks
   - $P(G)=0$ , for all other networks
 ]
 
@@ -170,7 +179,7 @@ knitr::include_graphics("Figures/random_network_graph3.png")
   - Degree: $\langle k \rangle = 2 \frac{m}{n}$
 
 - Special cases on the spectrum of probability distributions are not important
-  - E.g. large/small dimeter $l$
+  - E.g., large/small dimeter $l$
   - These are not *typical* networks
   - For large $n$ vertices properties averages tend to concentrate at the ensable averages
 
@@ -223,17 +232,17 @@ knitr::include_graphics("Figures/g_n_p_0_0_5.png")
 # Analytical behavior analysis of G(n,p) ensamble - $n$ fixed, $m$ not-fixed
 
 - Mean number of edges $\langle m \rangle$
-  - **Distinct vertex pairs** $\binom{n}{2}$ * probability of an edge $p$; e.g. 190 combinations
+  - **Distinct vertex pairs** $\binom{n}{2}$ * probability of an edge $p$;
 
 $$\langle m \rangle = \binom{n}{2} p$$
-- Mean degree of vertex $\langle k \rangle$ a.k.a. $c$
+- Mean degree of vertex $\langle k \rangle$ also as $c$
   - Number of other vertices $(n-1)$ * probability of an edge $p$
 
 $$\langle k \rangle = (n-1)p$$
 
 ---
 
-- Degree distribution $p_{k}$ (for a vertex with $k$ others)
+- Degree distribution $p_{k}$ (for a vertex connected with $k$ others)
   - **Distinct vertex pairs** $\binom{n-1}{k}$ * probability of connection with $k$ vertices, but not with others
 
 $$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$
@@ -243,22 +252,20 @@ $$p_{k} = \binom{n-1}{k}p^{k}(1-p)^{n-1-k}$$
 # Example G(n,p) ensamble - $n$ fixed, $m$ not-fixed
 
 .pull-left[
-- n = 20, p = 0.1
+- n = 20, p = 0.1 = $C$
 - $\langle m \rangle = 190 * 0.1 = 19$
 - $\langle k \rangle = (20-1) * 0.1 = 1.9$
 - $p_{3} = 969 * 0.001 * 0.185 = 0.18$
-- $C = \frac{1.9}{19} = 0.1$
 
 ```{r, echo=FALSE, out.width=300, fig.align='center'}
 knitr::include_graphics("Figures/g_n_p_0_1.png")
 ```
 ]
 .pull-right[
-- n=20, p = 0.05
+- n=20, p = 0.05 = $C$
 - $\langle m \rangle = 190 * 0.05 = 9.5$
 - $\langle k \rangle = (20-1) * 0.05 = 0.95$
 - $p_{3} = 969 * 0.000125 * 0.44 = 0.05$
-- $C = \frac{0.95}{19} = 0.05$
 
 ```{r, echo=FALSE, out.width=300, fig.align='center'}
 knitr::include_graphics("Figures/g_n_p_0_0_5.png")
@@ -281,23 +288,19 @@ knitr::include_graphics("Figures/g_n_p_0_0_5.png")
 
 ## 3. Giant component
 
+## 4. Null models
+
 ---
 
 # Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
 - Mean degree $c$
-  - constant over large networks - number of friends does not depend on the number of people in the world
-  1 . $c = (n-1)p \Rightarrow p = \frac{c}{n-1}$ , $n\rightarrow\infty$
-    - Vanishingly small probability $p$ of an edge
+  - Constant over large networks - number of friends does not depend on the number of people in the world $c = (n-1)p \Rightarrow p = \frac{c}{n-1}$ , $n\rightarrow\infty$
+  - Vanishingly small probability $p$ of an edge
     
 - Degree distribution (for a vertex) $p_k$
 
 $$p_{k} = e^{-c} \frac{c^{k}}{k!}, n\rightarrow\infty$$
----
-
-# Excercise 5
-
-- Show Poisson distribution + large networks
 
 ---
 
@@ -342,36 +345,44 @@ knitr::include_graphics("Figures/grid_network.png")
 
 ## 3. *Giant component*
 
+## 4. Null models
+
 ---
 
-# Poisson random graph: special case of G(n,p) ensamble for large networks $n\rightarrow\infty$
+# Largest component for large networks $n\rightarrow\infty$
 
-- Largest component
-  - $p = 0$ ; independent of size $n$
-    - Disconnected network
-    - $n$ separate components - vertices isolated
-  - $p = 1$ ; dependent of size $n$
-    - 1-single component
-    - Each vertex is connected to each other
-    - **Giant component**
-  - Most networks (should) have a large component that fills the network (to be able to perform the intended role)
-    - e.g., Internet connected component (infrastructure)
+- If $p = 0$; independent of size $n$
+  - Disconnected network
+  - $n$ separate components - vertices isolated
+- If $p = 1$; dependent of size $n$
+  - 1-single component
+  - Each vertex is connected to each other
+  - **Giant component**
+- Most networks (should) have a large component that fills the network (to be able to perform the intended role)
+  - e.g., Internet connected component (infrastructure)
 
-- Behavior: Sensitivity of parameter $p[0,1]$
-  - How the size to the largest component changes in respect to $p$?
-    - Expected: The size increases gradually and it is **extensive** around $p = 1$
-    - Reality: Largest componenet suddenly changes for one particular value of $p$
-    - **Phase transition**
+---
+
+# Sensitivity of parameter $p[0,1]$ vs. largest component
+- How the size to the largest component changes in respect to $p$?
+  - Expected: The size increases gradually and it is **extensive** around $p = 1$
+  - Reality: Largest componenet suddenly changes for one particular value of $p$
+  - **Phase transition**
 
 ---
 
 # Analytical behavor analysis of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
-1. Solution $S=0$ ; small c - no giant component
-  2. Solution $S=0 and S>0$ ; large c - there is giant component
-  - Transition phase happendes in between sna;;/large c, where gradient of the diagonal matches the gradient of the curve for $S=0$
-  
+1. Size $S=0$; small $c$ - no giant component
+
+2. Size $S=0$ and $S>0$ ; large c - there is giant component
+  - Transition phase happendes in between small/large $c$, where gradient of the diagonal matches the gradient of the curve for $S=0$
+
 - What is the size of the giant component?
+
+[Insert Fig. 12.1]
+
+
 
 - Size of the giant component for $c>1$ is larger than 1. Solution $S=0$
   - This is illustrated on Fig 12.1 for all values of c, with limit at $c=1$ for two given cases
@@ -381,3 +392,9 @@ knitr::include_graphics("Figures/grid_network.png")
 # Excercise 7
 
 - Show alreday given models that show phase transition, Schelling, Granovetter
+
+---
+
+# Null models
+
+---
