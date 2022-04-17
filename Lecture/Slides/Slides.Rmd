@@ -433,7 +433,9 @@ knitr::include_graphics("Figures/size_gianct_component_over_degree_distribution.
 - In terms of statistics, the null-hypothesis assumes that graph G ∈ S was produced by the random graph model
   - This null-hypothesis is rejected if it is very unlikely that the model is true
   - The random graph model is also often called **the null model** 
-  - the p-value $P(G|\mathcal{G})$ itself, i.e., the probability that the observed graph $G$ was produced by some random graph model $\mathcal{G}$, does not directly give you the probability $P(\mathcal{G}|G$, i.e., the probability that the model is true when $G$ is observed
+  
+- the p-value $P(G|\mathcal{G})$ itself, i.e., the probability that the observed graph $G$ was produced by some random graph model $\mathcal{G}$, does not directly give you the probability $P(\mathcal{G}|G$, i.e., the probability that the model is true when $G$ is observed
+  - **Strawmen argument**
   
 ---
 
@@ -454,3 +456,23 @@ knitr::include_graphics("Figures/null_model.jpg")
   - *Note that this can be modeled structurally by defining two different indegrees and two different outdegrees, each differentiated by the gender of the other child. The random graph model then maintains both types of in- and outdegrees.*
 
 ---
+
+# Strawman argument
+
+- In conducting any statistical test there are two hypotheses being considered
+  - The hypothesis that the researcher is really interested in is called the alternative (or sometimes the "experimental") hypothesis (or H1)
+  - The other is called the null hypothesis (or H0)
+  - The null hypothesis is a kind of "strawman"; it's a hypothesis that we want to disprove
+  - The reason for all this is that the great scientific philosophers (like Karl Popper) argue that we cannot logically prove something to be true, we can only disprove it (we create hypotheses that are falsifiable)
+  -  When we compare two group means, for instance, the null hypothesis states that they are equal to one another. The alternative then is that they are unequal, and if we wind up disproving or rejecting the null hypothesis, that is what we will conclude.
+
+- E.g., the null hypothesis would state that the a particular sample average is not significantly different from the population value
+  - It is different only due to chance factors. In other words, the sample mean is not really any different from the population mean once we take into account sampling variability
+  - If the null is not true, we accept the alternative hypothesis, that the sample mean is not equal to the population mean
+  - To "accept" the alternative hypothesis. Technically, we can't prove that it is true, so we just retain it until it is proven wrong
+
+# Strawmen arguemnt example
+
+- The problem is that the two conditional probabilities assume different reference groups and so they don’t even address the same research question.
+  - Another way of saying this is that a researcher cannot use the probability of a person being Catholic given that he’s the Pope to answer the question of whether someone is the Pope given that he’s Catholic
+  - Another example of this fallacy is to suggest that because many terrorists have backgrounds in engineering, engineers are more likely to be terrorists. 
