@@ -1,5 +1,5 @@
 ---
-title: "Opinion Dynamics"
+title: "Random Graph"
 subtitle: "Computational Modelling of Social Systems"
 author: "David Garcia and Petar Jerčić, 2022"
 output: html_document
@@ -7,8 +7,10 @@ output: html_document
 
 ### Readings
 
-- [Mixing beliefs among interacting agents. Guillaume Deffuant, David Neau, Frederic Amblard and Gerard Weisbuch. Advances in Complex Systems (2000)](https://www.worldscientific.com/doi/abs/10.1142/S0219525900000078)
+- [Networks: An Introduction, Newman (2010) - Chapter 12 to 12.5 ](https://books.google.hr/books?id=LrFaU4XCsUoC&pg=PR117&lpg=PR117&dq=networks+an+introduction+newman+chapter+12&source=bl&ots=88MpVIca3l&sig=ACfU3U3XNXovpnZEd_SUHWLjNCXh3Mq3qw&hl=en&sa=X&ved=2ahUKEwiR57PR8Jr3AhVFPewKHUDIDBcQ6AF6BAggEAM#v=onepage&q=networks%20an%20introduction%20newman%20chapter%2012&f=false)
+
+- [Zweig, K.A. (2016). Random Graphs as Null Models. In: Network Analysis Literacy. Lecture Notes in Social Networks. Springer, Vienna. https://doi.org/10.1007/978-3-7091-0741-6_7](https://link.springer.com/chapter/10.1007/978-3-7091-0741-6_7)
 
 ### Additional readings
 
-- [Tipping diffusivity in information accumulation systems: more links, less consensus. Jae K Shin and Jan Lorenz Journal of Statistical Mechanics: Theory and Experiment (2010)](https://iopscience.iop.org/article/10.1088/1742-5468/2010/06/P06005)
+- [On the use of random graphs as null model of large connected networks, Sebastian Wandelt, Xiaoqian Sun, Ernestina Menasalvas, Alejandro Rodríguez-González, Massimiliano Zanin (2019)](https://www.sciencedirect.com/science/article/abs/pii/S0960077919300098)

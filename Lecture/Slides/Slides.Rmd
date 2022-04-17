@@ -373,20 +373,34 @@ knitr::include_graphics("Figures/grid_network.png")
 
 # Analytical behavor analysis of G(n,p) ensamble for large networks $n\rightarrow\infty$
 
+.pull-left[
+```{r, echo=FALSE, out.width=600, fig.align='center'}
+knitr::include_graphics("Figures/size_gianct_component_over_degree_distribution.png")
+```
+]
+
+.pull-right[
 1. Size $S=0$; small $c$ - no giant component
 
 2. Size $S=0$ and $S>0$ ; large c - there is giant component
   - Transition phase happendes in between small/large $c$, where gradient of the diagonal matches the gradient of the curve for $S=0$
+]
 
-- What is the size of the giant component?
+---
 
-[Insert Fig. 12.1]
+# What is the size of the giant component?
 
+.pull-left[
+```{r, echo=FALSE, out.width=600, fig.align='center'}
+knitr::include_graphics("Figures/size_gianct_component_over_degree_distribution.png")
+```
+]
 
-
+.pull-right[
 - Size of the giant component for $c>1$ is larger than 1. Solution $S=0$
   - This is illustrated on Fig 12.1 for all values of c, with limit at $c=1$ for two given cases
-  
+]
+
 ---
 
 # Excercise 7
@@ -395,6 +409,48 @@ knitr::include_graphics("Figures/grid_network.png")
 
 ---
 
-# Null models
+# Random graphs
+
+## 1. Random graphs
+
+## 2. Poisson
+
+## 3. Giant component
+
+## 4. *Null models*
+
+---
+
+# Random graphs as null models
+
+- Most real-world networks show an average distance which is comparable to that of the corresponding random graph
+  - Their average clustering coefficient is much higher
+
+- Exploratory data analysis
+  - Given the value of a structural measure in a real-world network it can be compared with the expected value of that measure in a graph in which the network’s structure is randomized
+  - Any structure is tested whether it deviates from the structure of some pre-defined model
+
+- In terms of statistics, the null-hypothesis assumes that graph G ∈ S was produced by the random graph model
+  - This null-hypothesis is rejected if it is very unlikely that the model is true
+  - The random graph model is also often called **the null model** 
+  - the p-value $P(G|\mathcal{G})$ itself, i.e., the probability that the observed graph $G$ was produced by some random graph model $\mathcal{G}$, does not directly give you the probability $P(\mathcal{G}|G$, i.e., the probability that the model is true when $G$ is observed
+  
+---
+
+# Social network example
+
+```{r, echo=FALSE, out.width=300, fig.align='center'}
+knitr::include_graphics("Figures/null_model.jpg")
+```
+
+- Increasing complexity, cliquishness and gender segregation with age.
+  - Filled squares, girls; open circles, boys.
+
+- It is well known that, in general, same-gender friendships are more likely than boy-girl friendships— especially in primary school. 
+
+- Conlan et al. compared the number of these edges with the expected one in a model where each child maintains the number of declared and received friendship declarations with respect to the gender of the other child. 
+  - The mutuality is still statistically significant in almost all cases
+  - The effect is less pronounced than if compared with a simple directed random graph in which the gender is not regarded. 
+  - *Note that this can be modeled structurally by defining two different indegrees and two different outdegrees, each differentiated by the gender of the other child. The random graph model then maintains both types of in- and outdegrees.*
 
 ---
