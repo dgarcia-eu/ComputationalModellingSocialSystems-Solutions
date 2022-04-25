@@ -139,6 +139,7 @@ knitr::include_graphics("Figures/random_network_graph1.png")
   - Number of vertices (n)
   - Number of edges (m)
 
+
 - For such **Random graph G(n,m)** created in the following method:
   - Place edge (m) between (uniformly) random chosen pair
   - Prevent multiedge/self-edge by:
