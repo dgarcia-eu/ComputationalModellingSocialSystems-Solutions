@@ -1,119 +1,105 @@
-# Computationa Modelling Social Systems
+# Computational Modelling Social Systems
 [David Garcia](http://dgarcia.eu), 2022
 
-Welcome to the online materials for Computational Modelling of Social Systems
-
-TODO: Two paragraph course description
+Welcome to the online materials for Computational Modelling of Social Systems. 
+In this course, you will learn how to formulate and analyze computational models of social systems, in particular to study social interaction and the behavior of large groups of people and whole societiess. The course integrates contentz about social dynamics and analytic tools to understand the complex behavior of social systems. After this course, you will acquire programming skills to implement, simulate, and visualize these models.
 
 ## Who am I?
 
-I am the Professor for Computational Behavioral and Social Sciences the Graz University of Technology, where I lead the [Computational Social Science Lab](http://www.csslab.at). I am also group leader at the Medical University of Vienna and at the Complexity Science Hub Vienna. My background is Computer Science but I worked my whole career with psychologists, sociologists and physicists to learn new ways to understand human behavior. I got my PhD from ETH Zurich in 2012 and a habilitation in 2018, starting to work as full professor TU Graz in 2020. To learn more about my research, check my [publications](https://dgarcia.eu/full-publication-list/). I teach this course in collaboration with the two postdoctoral reasearcher in the Computational Social Science Lab [Dr. Petar Jerčić](https://petarjercic.com/) and [Dr. Jana Lasser](https://janalasser.at/).
-
-## Place and time
-
-TODO: Check information on lecture time and rooms
-
-The main lecture takes place on Thursdays at 14:15 (sharp) in lecture room i3 in the Inffeldgasse campus of TU Graz. **The lecture is followed by one exercise session in the same room.** An additional time slot for another **exercise group is available on Tuesdays at 13:00** (also sharp) in room HS II at Rechbauerstrasse 12, where the same exercise as the previous week is discussed. Lectures will be streamed and recorded. When attending in person, proof of 3G status is required and seating space is limited depending on varying policies. Seating will be given in a first-come-first-served basis each session and students that do not fit will have to follow the lecture online in another place.
+I am the Professor for Computational Behavioral and Social Sciences the Graz University of Technology, where I lead the [Computational Social Science Lab](http://www.csslab.at). I am also group leader at the Medical University of Vienna and at the Complexity Science Hub Vienna. My background is Computer Science but I worked my whole career with psychologists, sociologists and physicists to learn new ways to understand human behavior. I got my PhD from ETH Zurich in 2012 and a habilitation in 2018, starting to work as full professor TU Graz in 2020. To learn more about my research, check my [publications](https://dgarcia.eu/full-publication-list/). I teach this course in collaboration with the two postdoctoral researcher in the Computational Social Science Lab [Dr. Petar Jerčić](https://petarjercic.com/) and [Dr. Jana Lasser](https://janalasser.at/).
 
 ## Course Contents
-
-TODO: Check the first paragraph for protocol of the course?
-
-TODO: The session #10 doesn't have reading materials?
-
-The course is organized in 14 sessions grouped together in 4 blocks. Each block contains a practical part with exercises for you to apply what you learned. From the third week, the practice session will consist of a discussion of solutions to the exercise corresponding to the previous session. In exercises, you collect your own data and try to answer questions about human behavior and online phenomena. The online materials do not contain the solutions to the exercises, but if you are stuck or want to start from an easier point, in the github folder of the exercise you can find a version of the exercise with hints.
+The course is organized in 12 lectures grouped together in 4 blocks, plus two sessions in the end for project presentations. The course contains lectures and exercises in python to apply what you learned in the lecture. The online materials do not contain the solutions to the exercises, but if you are stuck or want to start from an easier point, in the github folder of the exercise you can find a version of the exercise with hints. We will add links to materials and readings a few days before each session.
 
 ### Block 1: Fundamentals of agent-based modelling
 
-1. **Basics of agent-based modeling: The macro-micro gap and cellular automata**  (03.03.2022)
+*(Please install Jupyter Notebook before the tutorial sessions takes place, where we can provide help with the installation if something goes wrong.)* The easiest way is using the [Anaconda](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/install.html) distribution, since it is well supported and maintained.
 
-- Course administration and information  
-- [[Readings]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md)
-- (Practice session 1 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
+1. [**Basics of agent-based modelling: the micro-macro gap**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/01_Introduction/Introduction.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/01_Introduction/Slides/Slides.html)  (03.03.2022)  
+- [**Tutorial: ABM basics in Python with Mesa (session 1)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_00_Tut/Exercise_Tutorial.md)
 
-*(Please install Jupyter and iPython before the next session takes place)*
+2. [**Modelling segregation: Schelling's model**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/02_Segregation/Segregation.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/02_Segregation/Slides/Slides.html) (10.03.2022)  
+- [**Tutorial: ABM basics in Python with Mesa (session 2)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_00_Tut/Exercise_Tutorial.md)
 
-2. **Modeling segregation: Schelling’s model**  (10.03.2022)  
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_02.md)
-- (Practice session 2 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
-
-3. **Modelling culture: Axelrod’s model and Latane’s model**  (17.03.2022)  
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_03.md)
-- (Practice session 3 start: ABM basics in Python with Mesa) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_01.md#code)
+3. [**Modelling cultures**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/03_Culture/Culture.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/03_Culture/Slides/Slides.html) (17.03.2022)  
+- [**Exercise 1: Schelling's model and Pandas (session 1)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_01_Schelling/Excercise_Schelling_withSolution.md)
 
 ### Block 2: Opinion dynamics
 
-4. **Basics of spreading: Granovetter’s threshold model**  (24.03.2022)
+4. [**Basics of spreading: Granovetter's threshold model**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/04_BasicSpreading/BasicSpreading.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/04_BasicSpreading/Slides/Slides.html)  (24.03.2022)  
+- [**Exercise 1: Schelling's model and Pandas (session 2)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_01_Schelling/Excercise_Schelling_withSolution.md)
 
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_04.md)
-- (Exercise 1 start (ungraded): Finding segregation tolerance thresholds in Schelling) [[Code]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_04.md#code)
+5. [**Opinion dynamics**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/05_OpinionDynamics/OpinionDynamics.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/05_OpinionDynamics/Slides/Slides.html)  (31.03.2022)  
+- [**Exercise 2: Threshold models (session 1)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_02_Granovetter/Excercise_Granovetter.md)
 
-5. **Modelling consensus, polarization, and fragmentation: The voter model and Bounded confidence models, Information accumulation systems**  (31.03.2022)
+6. [**Modelling hyperpolarization and cognitive balance**  (07.04.2022) - Guest lecture by Simon Schweighofer](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/06_Hyperpolarization/Hyperpolarization.html)    
+- [**Exercise 2: Threshold models (session 2)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_02_Granovetter/Excercise_Granovetter.md)
 
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_05.md)
-- (Exercise 1 cont.)
-
-6. **Modeling hyperpolarization and cognitive balance**  (07.04.2022)
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_06.md)
-- (Exercise 2 start (20%): Cascade dynamics in threshold models - the role of variance)
-
-**9.04-23.04 Easter holidays**
+*No class between 9.04.2022 and 23.04.2022: Easter holidays*
 
 ### Block 3: Network formation
 
-7. **Basics of network modelling: Random graphs and phase transitions**  (28.04.2022)
+7. [**Basic network models**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/07_NetworkModels/NetworkModels.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/07_NetworkModels/Slides/Slides.html)  (28.04.2022)  
+- [**Exercise 3: Bounded confidence (session 1)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_03_BoundedConfidence/Excercise_Bounded-Confidence.md)
 
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_07.md)
-- (Exercise 3 start (20%): Fragmentation in bounded confidence models)
+8. [**Modelling small worlds**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/08_SmallWorlds/SmallWorlds.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/08_SmallWorlds/Slides/Slides.html)  (05.05.2022)  
+- [**Exercise 3: Bounded confidence (session 2)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_03_BoundedConfidence/Excercise_Bounded-Confidence.md)
 
-8. **Modelling small worlds: The Watts-Strogatz model and cavemen models**  (05.05.2022)
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_08.md)
-- (Exercise 3 cont.)
-
-9. **Modeling scaling: The Barabasi-Albert model, edge copying**  (12.05.2022)
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_09.md)
-- (Exercise 4 start (25%): Long-tailed degree distributions in networks vs the BA model)
-
-**26.05. Ascension day**
-
-10. **Growth processes and distribution fitting**  (19.05.2022)
-
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_10.md)
-- (Exercise 4 cont.)
+9. [**Scale-free networks**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/09_ScaleFreeNetworks/ScaleFreeNetworks.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/09_ScaleFreeNetworks/Slides/Slides.html)  (12.05.2022)  
+- [**Exercise 4: Scale-free networks and visualization (session 1)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_04_ScaleFreeNetworks/Excercise_Scale_Free_Networks.md)
 
 ### Block 4: Behavior on networks
 
-11. **Modeling spreading in networks: the SIR, SIS, and complex contagion**  (02.06.2022)
+10. [**Growth processes and spreading in networks**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/10_GrowthAndSpreading/GrowthAndSpreading.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/10_GrowthAndSpreading/Slides/Slides.html)  (19.05.2022)   
+- [**Exercise 4: Scale-free networks and visualization (session 2)**](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/Exercise_04_ScaleFreeNetworks/Excercise_Scale_Free_Networks.md)
 
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_11.md)
-- (Project guidance)
-- (Practice session 4 start: Mesa using Pandas)
+*No class on 26.05.2022: Ascension day*
 
-12. **Computational modelling applications: the SEIRX model**  (09.06.2022)
+11. [**Modelling epidemics: the SEIRX model**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/11_ModellingEpidemics/index.html) [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/11_ModellingEpidemics/index.html)  (06.02.2022) 
 
-- [Readings](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems-Solutions/blob/master/lecture_11.md)
-- (Project guidance)
-- (Practice session 5 start: Mesa using Pandas)
+12. [**Lecture Q&A session**](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/12_Summary/Slides/Slides.html)  [[Slides]](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/12_Summary/Slides/Slides.html)  (09.06.2022)  
+*Project guidance*  
 
-**16.06: Corpus Christi**
+*No class on 16.06.2022: Corpus Christi*
 
-13. **Project presentations**  (23.06.2022)
+13. **Project presentations** [[Agenda]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/final_project_agenda.pdf) (23.06.2022)
+- Make sure your whole group is available between 16:00 and 19:00
 
-14. **Project presentations**  (30.06.2022)
+14. **Project presentations** [[Agenda]](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems/blob/main/final_project_agenda.pdf) (30.06.2022)
+- Make sure your whole group is available between 16:00 and 19:00
+- **The deadline to submit your final report is July 10th (end of day). You can submit over Teach Center. [projects guide](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/ProjectsGuide.html)**
 
 ## Where to access materials
 
-TODO: What speficic material will be available in GitHub?
-TODO: Update the course id for the TU Graz Teach Center?
+- Reading lists, codes, and data can be found on the [Github repository of the course](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems).
+- Students at TU Graz can access the [course at Teach Center](https://tc.tugraz.at/main/enrol/index.php?id=4384) to get additional information, watch videos, and to participate in the forums.
 
-- Handouts, codes, and data can be found on the [Github repository of the course](https://github.com/dgarcia-eu/ComputationalModellingSocialSystems).
-- Students at TU Graz can access the [course at Teach Center](https://tc.tugraz.at/main/course/view.php?id=4072) to get additional information, watch videos, and to participate in the forums and quizzes.
+
+## Place and time
+
+The course takes place on Thursdays at 16:15 (sharp), with a **lecture followed by an exercise session**. The first session of the course will take place in room [HS F (Kopernicusgasse 24)](https://online.tugraz.at/tug_online/ris.ris?pOrgNr=37&pQuellGeogrBTypNr=5&pZielGeogrBTypNr=5&pZielGeogrBerNr=350003&pRaumNr=568&pActionFlag=A&pShowEinzelraum=J) with live streaming over Webex (see TeachCenter for the link). From the second week of the course, the course will take place in [HS i7 (Inffeldgasse)](https://online.tugraz.at/tug_online/ris.ris?pOrgNr=37&pQuellGeogrBTypNr=5&pZielGeogrBTypNr=5&pZielGeogrBerNr=240001&pRaumNr=4030&pActionFlag=A&pShowEinzelraum=J) and streaming will take place through the standard TU Graz streaming system. 
+
+The semester starts with a yellow light, so we will start in hybrid mode with limited occupancy in person. When attending in person, proof of 2G status might be required and seating space is limited depending on varying policies. Seating will be given in a first-come-first-served basis each session and students that do not fit will have to follow the lecture online from another place.
+
+There is an extra online exercise support group on Wednesdays at 13:00 (sharp). Check TeachCenter for the webex link.
+
+
 
 ## Course grading
 
-The assessment for the course is based on the excercises given throughout the course (grade percetage given in the brackets) and the final group research project (max. 4 students groups). The project grade is a combination of the project presentation (35%) and the excercises (65%).
+The assessment for the course is based on four components:
+
+- Exercises done in groups of **one or two students**
+  - Exercise 1: ungraded
+  - Exercise 2: **25% of final grade**. Deadline: 20.04.2022
+  - Exercise 3: **25% of final grade**. Deadline: 18.05.2022
+  - Exercise 4: ungraded
+  
+- Final group project in groups of **up to four students**. Projects are linked to two evaluations:
+  - Participation in group presentation sessions (both as presenter and discussant): **25% of final grade**
+  - Project report and codes: **25% of final grade**
+
+You can find more information about the project presentations and reports, including deadlines, in the [projects guide.](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/ProjectsGuide.html) You can also find some guidance and recommendations in the [slides of the project support session.](https://dgarcia-eu.github.io/ComputationalModellingSocialSystems/ProjectsIntroSlides/Slides.html)
+
+
+Graded exercises need to be submitted on teach center by the deadline (end of day in Graz time). We will provide solution files for ungraded exercises for you to check your progress. Nevertheless, we expect to see in your projects the techniques covered in the exercises, both graded and ungraded.
